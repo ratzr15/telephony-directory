@@ -10,15 +10,39 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var avatarImgView: UIImageView!
+    @IBOutlet weak var favoritesImgView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var item: ResourceCellViewModel? {
+        didSet {
+            
+            guard let item = item else {
+                return
+            }
+            nameLabel.text   = item.title
+            avatarImgView.load(URL.init(string: item.title), placeholder: "placeholder_photo", errorPlaceholder: "placeholder_photo")
+        }
+    }
+    
+    static var nib:UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        avatarImgView.image = nil
+        nameLabel.text = nil
+        favoritesImgView.image = nil
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }
