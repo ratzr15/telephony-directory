@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum Contacts {
-    case getReviews
+    case getContacts
 }
 
 extension Contacts : TargetType {
@@ -21,7 +21,7 @@ extension Contacts : TargetType {
     
     var path: String {
         switch self {
-        case .getReviews: return "/contacts.json"
+        case .getContacts: return "/contacts.json"
         }
     }
     
