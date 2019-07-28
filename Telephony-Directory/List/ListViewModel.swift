@@ -12,7 +12,7 @@
 import Foundation
 import RxRelay
 
-final class ListViewModel : ListResourcesViewModel, CanSortResources {
+final class ListViewModel : ListResourcesViewModel, CanModifyResources {
     var stateMode = ResourceState.add
     typealias Entity = Contact
     typealias EntityViewModel = ListCellViewModel
@@ -23,7 +23,7 @@ final class ListViewModel : ListResourcesViewModel, CanSortResources {
     let state = BehaviorRelay<ListViewState>(value: .loading)
     
     func parseEntityToViewModel(_ entity: Contact) -> ListCellViewModel {
-        return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", profile_pic: entity.profile_pic ?? "")
+        return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", last_name: entity.last_name ?? "", isFavorite: entity.favorite ?? false, profile_pic: entity.profile_pic ?? "")
     }
     
     func requestToApi(callback: ((Outcome<[Contact]>) -> ())?) {

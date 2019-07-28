@@ -12,7 +12,7 @@
 import UIKit
 import RxSwift
 
-final class ListViewController: UIViewController, ListResourcesViewController, CanSortTableView {
+final class ListViewController: UIViewController, ListResourcesViewController, CanModifyTableView {
     typealias ViewModel = ListViewModel
     
     // MARK: Fields
