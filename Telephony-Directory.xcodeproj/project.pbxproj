@@ -152,8 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				AE37F6F42199A708001787F6 /* Telephony-Directory */,
-				AE37F7092199A709001787F6 /* ProjectTests */,
-				AE37F7142199A709001787F6 /* ProjectUITests */,
+				AE37F7092199A709001787F6 /* Telephony-DirectoryTests */,
+				AE37F7142199A709001787F6 /* Telephony-DirectoryUITests */,
 				AE37F6F32199A708001787F6 /* Products */,
 				73C30BB412CB38B58543A88D /* Pods */,
 				3B2B63516AEBA17A002DCC59 /* Frameworks */,
@@ -185,22 +185,22 @@
 			path = "Telephony-Directory";
 			sourceTree = "<group>";
 		};
-		AE37F7092199A709001787F6 /* ProjectTests */ = {
+		AE37F7092199A709001787F6 /* Telephony-DirectoryTests */ = {
 			isa = PBXGroup;
 			children = (
 				AE37F70A2199A709001787F6 /* NewsListTests.swift */,
 				AE37F70C2199A709001787F6 /* Info.plist */,
 			);
-			path = ProjectTests;
+			path = "Telephony-DirectoryTests";
 			sourceTree = "<group>";
 		};
-		AE37F7142199A709001787F6 /* ProjectUITests */ = {
+		AE37F7142199A709001787F6 /* Telephony-DirectoryUITests */ = {
 			isa = PBXGroup;
 			children = (
 				AE37F7152199A709001787F6 /* NewsListUITests.swift */,
 				AE37F7172199A709001787F6 /* Info.plist */,
 			);
-			path = ProjectUITests;
+			path = "Telephony-DirectoryUITests";
 			sourceTree = "<group>";
 		};
 		AE6E302722E59D3300EC5DE8 /* List */ = {
@@ -794,7 +794,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewsListTests/Info.plist;
+				INFOPLIST_FILE = "Telephony-Directory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -815,7 +815,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewsListTests/Info.plist;
+				INFOPLIST_FILE = "Telephony-Directory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -835,7 +835,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewsListUITests/Info.plist;
+				INFOPLIST_FILE = "Telephony-Directory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -855,7 +855,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NewsListUITests/Info.plist;
+				INFOPLIST_FILE = "Telephony-Directory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

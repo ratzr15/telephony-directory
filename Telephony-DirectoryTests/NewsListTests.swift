@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import NewsList
+@testable import Telephony_Directory
 
 class NewsListTests: XCTestCase {
 
