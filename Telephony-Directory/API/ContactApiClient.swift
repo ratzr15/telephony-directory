@@ -9,9 +9,9 @@
 import Foundation
 import Moya
 
-public class ReviewApiClient : ReviewApi {
+public class ContactApiClient : ReviewApi {
     
-    public static let shared = ReviewApiClient()
+    public static let shared = ContactApiClient()
     
     private let provider = MoyaProvider<Reviews>()
     

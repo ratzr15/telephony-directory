@@ -9,19 +9,19 @@
 import Foundation
 import Moya
 
-enum Reviews {
+enum Contacts {
     case getReviews
 }
 
-extension Reviews : TargetType {
+extension Contacts : TargetType {
     
     var baseURL: URL {
-        return URL(string: "https://www.getyourguide.com/berlin-l17/tempelhof-2-hour-airport-history-tour-berlin-airlift-more-t23776")!
+        return URL(string: "https://gojek-contacts-app.herokuapp.com")!
     }
     
     var path: String {
         switch self {
-        case .getReviews: return "/reviews.json"
+        case .getReviews: return "/contacts.json"
         }
     }
     

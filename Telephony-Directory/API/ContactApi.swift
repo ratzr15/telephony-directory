@@ -11,7 +11,7 @@
 
 import Foundation
 
-public protocol ReviewApi {
+public protocol ContactApi {
     
     func getReviews(callback: ((Outcome<[Datum]>) -> ())?)
     

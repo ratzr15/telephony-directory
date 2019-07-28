@@ -12,23 +12,32 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Review : Codable {
-	let status : Bool?
-	let total_reviews_comments : Int?
-	let data : [Datum]
+struct Json4Swift_Base : Codable {
+	let id : Int?
+	let first_name : String?
+	let last_name : String?
+	let profile_pic : String?
+	let favorite : Bool?
+	let url : String?
 
 	enum CodingKeys: String, CodingKey {
 
-		case status = "status"
-		case total_reviews_comments = "total_reviews_comments"
-		case data = "data"
+		case id = "id"
+		case first_name = "first_name"
+		case last_name = "last_name"
+		case profile_pic = "profile_pic"
+		case favorite = "favorite"
+		case url = "url"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		status = try values.decodeIfPresent(Bool.self, forKey: .status)
-		total_reviews_comments = try values.decodeIfPresent(Int.self, forKey: .total_reviews_comments)
-        data = try (values.decodeIfPresent([Datum].self, forKey: .data) ?? [])
+		id = try values.decodeIfPresent(Int.self, forKey: .id)
+		first_name = try values.decodeIfPresent(String.self, forKey: .first_name)
+		last_name = try values.decodeIfPresent(String.self, forKey: .last_name)
+		profile_pic = try values.decodeIfPresent(String.self, forKey: .profile_pic)
+		favorite = try values.decodeIfPresent(Bool.self, forKey: .favorite)
+		url = try values.decodeIfPresent(String.self, forKey: .url)
 	}
 
 }
