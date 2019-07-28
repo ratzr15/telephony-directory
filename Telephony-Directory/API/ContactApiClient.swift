@@ -9,19 +9,19 @@
 import Foundation
 import Moya
 
-public class ContactApiClient : ReviewApi {
+public class ContactApiClient : ContactApi {
     
     public static let shared = ContactApiClient()
     
-    private let provider = MoyaProvider<Reviews>()
+    private let provider = MoyaProvider<Contacts>()
     
-    public func getReviews(callback: ((Outcome<[Datum]>) -> ())?) {
-        provider.request(.getReviews) { result in
+    public func getContacts(callback: ((Outcome<[Contact]>) -> ())?) {
+        provider.request(.getContacts) { result in
             switch result {
             case let .success(response):
                 do {
-                    let categories = try response.filterSuccessfulStatusCodes().map(Review.self)
-                    callback?(.success(result: categories.data))
+                    let categories = try response.filterSuccessfulStatusCodes().map([Contact].self)
+                    callback?(.success(result: categories))
                 } catch (let error) {
                     callback?(.failure(error: error, reason: error.localizedDescription))
                 }

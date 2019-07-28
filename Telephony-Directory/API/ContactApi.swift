@@ -13,6 +13,6 @@ import Foundation
 
 public protocol ContactApi {
     
-    func getReviews(callback: ((Outcome<[Datum]>) -> ())?)
+    func getContacts(callback: ((Outcome<[Contact]>) -> ())?)
     
 }
