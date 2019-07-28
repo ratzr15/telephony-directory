@@ -93,7 +93,7 @@ extension ListResourcesViewController {
     }
 }
 
-extension ListResourcesViewController where Self : CanSortTableView, Self.ViewModel : CanSortResources {
+extension ListResourcesViewController where Self : CanModifyTableView, Self.ViewModel : CanModifyResources {
     
     func setupBindings() {
         bindTableViewData()

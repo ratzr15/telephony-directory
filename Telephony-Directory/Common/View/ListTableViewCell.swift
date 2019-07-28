@@ -19,8 +19,16 @@ class ListTableViewCell: UITableViewCell {
             guard let item = item as? ListCellViewModel else {
                 return
             }
-            nameLabel.text   = item.first_name
+            nameLabel.text   = item.first_name + item.last_name
             avatarImgView.load(URL.init(string: item.profile_pic))
+            
+            if item.isFavorite {
+                favoritesImgView.image = UIImage(named: "home_favourite")
+                favoritesImgView.isHidden = false
+            }else {
+                favoritesImgView.isHidden = true
+            }
+
         }
     }
     
@@ -40,7 +48,6 @@ class ListTableViewCell: UITableViewCell {
         super.prepareForReuse()
         avatarImgView.image = nil
         nameLabel.text = nil
-        favoritesImgView.image = nil
     }
 
     
