@@ -16,4 +16,5 @@ struct ListCellViewModel : ResourceCellViewModel {
     var first_name: String
     var profile_pic: String
 
+    //FIXME: Add last name
 }

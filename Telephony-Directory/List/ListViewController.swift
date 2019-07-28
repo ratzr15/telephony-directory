@@ -12,8 +12,7 @@
 import UIKit
 import RxSwift
 
-final class ListViewController: UIViewController, ListResourcesViewController {
-
+final class ListViewController: UIViewController, ListResourcesViewController, CanSortTableView {
     typealias ViewModel = ListViewModel
     
     // MARK: Fields
@@ -36,18 +35,23 @@ final class ListViewController: UIViewController, ListResourcesViewController {
         return ErrorView()
     }()
     
+    lazy var sortButton: UIBarButtonItem = {
+        return UIBarButtonItem.init(barButtonSystemItem: .add, target: nil, action: nil)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Reviews"
+        title = "Contact"
         setupBindings()
         setupViewHierarchy()
         setupConstraints()
         viewModel.requestResources()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     // MARK: Actions
 
-    func onResourceSelection(resource: Datum) {
+    func onResourceSelection(resource: Contact) {
         
     }
     
