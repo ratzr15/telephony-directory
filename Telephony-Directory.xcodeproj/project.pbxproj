@@ -18,14 +18,15 @@
 		AE5FBC1122ED96C800ECC727 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FBC1022ED96C800ECC727 /* UIImageView+Kingfisher.swift */; };
 		AE5FBC1522EDACA700ECC727 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FBC1322EDACA700ECC727 /* ListTableViewCell.swift */; };
 		AE5FBC1622EDACA700ECC727 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5FBC1422EDACA700ECC727 /* ListTableViewCell.xib */; };
+		AE5FBC1822EDB71700ECC727 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FBC1722EDB71700ECC727 /* Contact.swift */; };
 		AE6E302A22E59D4200EC5DE8 /* CanSortResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302822E59D4200EC5DE8 /* CanSortResources.swift */; };
 		AE6E302B22E59D4200EC5DE8 /* CanSortTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302922E59D4200EC5DE8 /* CanSortTableView.swift */; };
 		AE6E302F22E5A5F600EC5DE8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302E22E5A5F600EC5DE8 /* ListViewController.swift */; };
 		AE6E303122E5A62D00EC5DE8 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303022E5A62D00EC5DE8 /* ListViewModel.swift */; };
 		AE6E303522E5A70C00EC5DE8 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303422E5A70C00EC5DE8 /* ListCellViewModel.swift */; };
-		AE6E303822E5AE7A00EC5DE8 /* ReviewApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303722E5AE7A00EC5DE8 /* ReviewApi.swift */; };
-		AE6E303A22E5C72600EC5DE8 /* ReviewApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303922E5C72600EC5DE8 /* ReviewApiClient.swift */; };
-		AE6E303D22E5C7C000EC5DE8 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303C22E5C7C000EC5DE8 /* Reviews.swift */; };
+		AE6E303822E5AE7A00EC5DE8 /* ContactApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303722E5AE7A00EC5DE8 /* ContactApi.swift */; };
+		AE6E303A22E5C72600EC5DE8 /* ContactApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303922E5C72600EC5DE8 /* ContactApiClient.swift */; };
+		AE6E303D22E5C7C000EC5DE8 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303C22E5C7C000EC5DE8 /* Contacts.swift */; };
 		AE7FDD3322E6E26A00FA5182 /* String+NilIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7FDD3222E6E26A00FA5182 /* String+NilIfEmpty.swift */; };
 		AE84135022E4952D006396B2 /* ListResourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84134F22E4952D006396B2 /* ListResourcesViewModel.swift */; };
 		AE84135422E49580006396B2 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84135322E49580006396B2 /* Resource.swift */; };
@@ -34,8 +35,6 @@
 		AE84135E22E49D1F006396B2 /* ListResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84135D22E49D1F006396B2 /* ListResourcesViewController.swift */; };
 		AE84136222E49D75006396B2 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84136022E49D75006396B2 /* ErrorView.swift */; };
 		AE84136322E49D75006396B2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84136122E49D75006396B2 /* LoadingView.swift */; };
-		AE899CF022E6E69700E36B3E /* Datum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE899CED22E6E69600E36B3E /* Datum.swift */; };
-		AE899CF222E6E69700E36B3E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE899CEF22E6E69700E36B3E /* Review.swift */; };
 		E08C35C987AC6275E8F18456 /* Pods_Telephony_Directory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B7310811FF5ACE74469CAE /* Pods_Telephony_Directory.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,14 +81,15 @@
 		AE5FBC1022ED96C800ECC727 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		AE5FBC1322EDACA700ECC727 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		AE5FBC1422EDACA700ECC727 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		AE5FBC1722EDB71700ECC727 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		AE6E302822E59D4200EC5DE8 /* CanSortResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanSortResources.swift; sourceTree = "<group>"; };
 		AE6E302922E59D4200EC5DE8 /* CanSortTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanSortTableView.swift; sourceTree = "<group>"; };
 		AE6E302E22E5A5F600EC5DE8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AE6E303022E5A62D00EC5DE8 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		AE6E303422E5A70C00EC5DE8 /* ListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
-		AE6E303722E5AE7A00EC5DE8 /* ReviewApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewApi.swift; sourceTree = "<group>"; };
-		AE6E303922E5C72600EC5DE8 /* ReviewApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewApiClient.swift; sourceTree = "<group>"; };
-		AE6E303C22E5C7C000EC5DE8 /* Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		AE6E303722E5AE7A00EC5DE8 /* ContactApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactApi.swift; sourceTree = "<group>"; };
+		AE6E303922E5C72600EC5DE8 /* ContactApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactApiClient.swift; sourceTree = "<group>"; };
+		AE6E303C22E5C7C000EC5DE8 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		AE7FDD3222E6E26A00FA5182 /* String+NilIfEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NilIfEmpty.swift"; sourceTree = "<group>"; };
 		AE84134F22E4952D006396B2 /* ListResourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResourcesViewModel.swift; sourceTree = "<group>"; };
 		AE84135322E49580006396B2 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -98,8 +98,6 @@
 		AE84135D22E49D1F006396B2 /* ListResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResourcesViewController.swift; sourceTree = "<group>"; };
 		AE84136022E49D75006396B2 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AE84136122E49D75006396B2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		AE899CED22E6E69600E36B3E /* Datum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datum.swift; sourceTree = "<group>"; };
-		AE899CEF22E6E69700E36B3E /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		B032160A2B1EC4B4C9E3BEB9 /* Pods-Telephony-DirectoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telephony-DirectoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telephony-DirectoryTests/Pods-Telephony-DirectoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE22AA3B3C03EE72116547F /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		BC61F19BA225319F8C7467CD /* Pods-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,8 +248,8 @@
 		AE6E303622E5AE2C00EC5DE8 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				AE6E303922E5C72600EC5DE8 /* ReviewApiClient.swift */,
-				AE6E303722E5AE7A00EC5DE8 /* ReviewApi.swift */,
+				AE6E303922E5C72600EC5DE8 /* ContactApiClient.swift */,
+				AE6E303722E5AE7A00EC5DE8 /* ContactApi.swift */,
 				AE7FDD3122E6E25A00FA5182 /* Extensions */,
 				AE6E303B22E5C7B200EC5DE8 /* Providers */,
 				AE84135222E49573006396B2 /* Model */,
@@ -262,7 +260,7 @@
 		AE6E303B22E5C7B200EC5DE8 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				AE6E303C22E5C7C000EC5DE8 /* Reviews.swift */,
+				AE6E303C22E5C7C000EC5DE8 /* Contacts.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -298,8 +296,7 @@
 		AE84135922E49862006396B2 /* BusinessEntities */ = {
 			isa = PBXGroup;
 			children = (
-				AE899CED22E6E69600E36B3E /* Datum.swift */,
-				AE899CEF22E6E69700E36B3E /* Review.swift */,
+				AE5FBC1722EDB71700ECC727 /* Contact.swift */,
 				AE84135A22E4987B006396B2 /* Protocols */,
 			);
 			path = BusinessEntities;
@@ -585,22 +582,21 @@
 				AE6E303522E5A70C00EC5DE8 /* ListCellViewModel.swift in Sources */,
 				AE84135422E49580006396B2 /* Resource.swift in Sources */,
 				AE5FBC1522EDACA700ECC727 /* ListTableViewCell.swift in Sources */,
-				AE6E303A22E5C72600EC5DE8 /* ReviewApiClient.swift in Sources */,
+				AE6E303A22E5C72600EC5DE8 /* ContactApiClient.swift in Sources */,
 				AE84135E22E49D1F006396B2 /* ListResourcesViewController.swift in Sources */,
 				AE7FDD3322E6E26A00FA5182 /* String+NilIfEmpty.swift in Sources */,
-				AE899CF222E6E69700E36B3E /* Review.swift in Sources */,
-				AE6E303822E5AE7A00EC5DE8 /* ReviewApi.swift in Sources */,
+				AE5FBC1822EDB71700ECC727 /* Contact.swift in Sources */,
+				AE6E303822E5AE7A00EC5DE8 /* ContactApi.swift in Sources */,
 				AE84135822E4985E006396B2 /* Outcome.swift in Sources */,
 				AE5FBC1122ED96C800ECC727 /* UIImageView+Kingfisher.swift in Sources */,
 				AE37F6F62199A708001787F6 /* AppDelegate.swift in Sources */,
 				AE84135022E4952D006396B2 /* ListResourcesViewModel.swift in Sources */,
 				AE6E302A22E59D4200EC5DE8 /* CanSortResources.swift in Sources */,
 				AE84135622E495B2006396B2 /* ResourceCellViewModel.swift in Sources */,
-				AE6E303D22E5C7C000EC5DE8 /* Reviews.swift in Sources */,
+				AE6E303D22E5C7C000EC5DE8 /* Contacts.swift in Sources */,
 				AE84136222E49D75006396B2 /* ErrorView.swift in Sources */,
 				AE6E303122E5A62D00EC5DE8 /* ListViewModel.swift in Sources */,
 				AE6E302B22E59D4200EC5DE8 /* CanSortTableView.swift in Sources */,
-				AE899CF022E6E69700E36B3E /* Datum.swift in Sources */,
 				AE6E302F22E5A5F600EC5DE8 /* ListViewController.swift in Sources */,
 				AE84136322E49D75006396B2 /* LoadingView.swift in Sources */,
 			);
