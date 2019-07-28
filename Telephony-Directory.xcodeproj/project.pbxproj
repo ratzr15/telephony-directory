@@ -19,8 +19,8 @@
 		AE5FBC1522EDACA700ECC727 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FBC1322EDACA700ECC727 /* ListTableViewCell.swift */; };
 		AE5FBC1622EDACA700ECC727 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5FBC1422EDACA700ECC727 /* ListTableViewCell.xib */; };
 		AE5FBC1822EDB71700ECC727 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FBC1722EDB71700ECC727 /* Contact.swift */; };
-		AE6E302A22E59D4200EC5DE8 /* CanSortResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302822E59D4200EC5DE8 /* CanSortResources.swift */; };
-		AE6E302B22E59D4200EC5DE8 /* CanSortTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302922E59D4200EC5DE8 /* CanSortTableView.swift */; };
+		AE6E302A22E59D4200EC5DE8 /* CanModifyResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302822E59D4200EC5DE8 /* CanModifyResources.swift */; };
+		AE6E302B22E59D4200EC5DE8 /* CanModifyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302922E59D4200EC5DE8 /* CanModifyTableView.swift */; };
 		AE6E302F22E5A5F600EC5DE8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E302E22E5A5F600EC5DE8 /* ListViewController.swift */; };
 		AE6E303122E5A62D00EC5DE8 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303022E5A62D00EC5DE8 /* ListViewModel.swift */; };
 		AE6E303522E5A70C00EC5DE8 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E303422E5A70C00EC5DE8 /* ListCellViewModel.swift */; };
@@ -82,8 +82,8 @@
 		AE5FBC1322EDACA700ECC727 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		AE5FBC1422EDACA700ECC727 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		AE5FBC1722EDB71700ECC727 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		AE6E302822E59D4200EC5DE8 /* CanSortResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanSortResources.swift; sourceTree = "<group>"; };
-		AE6E302922E59D4200EC5DE8 /* CanSortTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanSortTableView.swift; sourceTree = "<group>"; };
+		AE6E302822E59D4200EC5DE8 /* CanModifyResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanModifyResources.swift; sourceTree = "<group>"; };
+		AE6E302922E59D4200EC5DE8 /* CanModifyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanModifyTableView.swift; sourceTree = "<group>"; };
 		AE6E302E22E5A5F600EC5DE8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AE6E303022E5A62D00EC5DE8 /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		AE6E303422E5A70C00EC5DE8 /* ListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
@@ -188,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				AE37F6F52199A708001787F6 /* AppDelegate.swift */,
+				AE5EC89222EE1B210001D6B7 /* Detail */,
 				AE6E302722E59D3300EC5DE8 /* List */,
 				AE84135C22E49CDF006396B2 /* Common */,
 				AE6E303622E5AE2C00EC5DE8 /* API */,
@@ -217,6 +218,13 @@
 			path = "Telephony-DirectoryUITests";
 			sourceTree = "<group>";
 		};
+		AE5EC89222EE1B210001D6B7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		AE6E302722E59D3300EC5DE8 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,8 +239,8 @@
 		AE6E302C22E59D4500EC5DE8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				AE6E302822E59D4200EC5DE8 /* CanSortResources.swift */,
-				AE6E302922E59D4200EC5DE8 /* CanSortTableView.swift */,
+				AE6E302822E59D4200EC5DE8 /* CanModifyResources.swift */,
+				AE6E302922E59D4200EC5DE8 /* CanModifyTableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -591,12 +599,12 @@
 				AE5FBC1122ED96C800ECC727 /* UIImageView+Kingfisher.swift in Sources */,
 				AE37F6F62199A708001787F6 /* AppDelegate.swift in Sources */,
 				AE84135022E4952D006396B2 /* ListResourcesViewModel.swift in Sources */,
-				AE6E302A22E59D4200EC5DE8 /* CanSortResources.swift in Sources */,
+				AE6E302A22E59D4200EC5DE8 /* CanModifyResources.swift in Sources */,
 				AE84135622E495B2006396B2 /* ResourceCellViewModel.swift in Sources */,
 				AE6E303D22E5C7C000EC5DE8 /* Contacts.swift in Sources */,
 				AE84136222E49D75006396B2 /* ErrorView.swift in Sources */,
 				AE6E303122E5A62D00EC5DE8 /* ListViewModel.swift in Sources */,
-				AE6E302B22E59D4200EC5DE8 /* CanSortTableView.swift in Sources */,
+				AE6E302B22E59D4200EC5DE8 /* CanModifyTableView.swift in Sources */,
 				AE6E302F22E5A5F600EC5DE8 /* ListViewController.swift in Sources */,
 				AE84136322E49D75006396B2 /* LoadingView.swift in Sources */,
 			);

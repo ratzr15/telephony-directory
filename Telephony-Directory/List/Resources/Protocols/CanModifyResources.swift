@@ -11,12 +11,12 @@
 
 import Foundation
 
-protocol CanSortResources {
+protocol CanModifyResources {
     
     var stateMode: ResourceState { get set}
 }
 
-extension CanSortResources where Self : ListResourcesViewModel {
+extension CanModifyResources where Self : ListResourcesViewModel {
     
     func resources(_ r: [Self.Entity]) -> [Self.Entity] {
       

@@ -13,12 +13,12 @@ import Foundation
 import UIKit
 import RxCocoa
 
-protocol CanSortTableView {
+protocol CanModifyTableView {
  
     var sortButton: UIBarButtonItem { get }
 }
 
-extension CanSortTableView where Self : ListResourcesViewController, Self.ViewModel : CanSortResources {
+extension CanModifyTableView where Self : ListResourcesViewController, Self.ViewModel : CanModifyResources {
     
     func setupSortButton() {
         sortButton.rx.tap
