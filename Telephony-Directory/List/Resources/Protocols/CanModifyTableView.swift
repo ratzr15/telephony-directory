@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
-//  File Name        :   CanSortTableView
+//  File Name        :   CanModifyTableView
 //  Description      :   UIBarButtonItem sort
 //                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
 //  Author            :  Rathish Kannan

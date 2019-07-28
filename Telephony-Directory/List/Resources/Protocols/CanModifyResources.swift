@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
-//  File Name        :   CanSortResources
+//  File Name        :   CanModifyResources
 //  Description      :   Confirm to this proocol to add a sort button on navigation with sorting loagic (onSortClicked)
 //                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
 //  Author            :  Rathish Kannan
