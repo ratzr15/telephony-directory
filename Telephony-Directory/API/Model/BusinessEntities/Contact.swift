@@ -12,9 +12,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Json4Swift_Base : Codable {
-	let id : Int?
-	let first_name : String?
+public struct Contact : Codable, Resource {
+    public var id : Int?
+	public let first_name : String?
 	let last_name : String?
 	let profile_pic : String?
 	let favorite : Bool?
@@ -30,7 +30,7 @@ struct Json4Swift_Base : Codable {
 		case url = "url"
 	}
 
-	init(from decoder: Decoder) throws {
+	public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		id = try values.decodeIfPresent(Int.self, forKey: .id)
 		first_name = try values.decodeIfPresent(String.self, forKey: .first_name)
