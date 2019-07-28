@@ -14,7 +14,7 @@ import Foundation
 struct ListCellViewModel : ResourceCellViewModel {
     var id: Int
     var first_name: String
+    let last_name: String
+    let isFavorite: Bool
     var profile_pic: String
-
-    //FIXME: Add last name
 }
