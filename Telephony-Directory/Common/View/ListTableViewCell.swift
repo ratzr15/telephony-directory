@@ -16,12 +16,11 @@ class ListTableViewCell: UITableViewCell {
     
     var item: ResourceCellViewModel? {
         didSet {
-            
-            guard let item = item else {
+            guard let item = item as? ListCellViewModel else {
                 return
             }
-            nameLabel.text   = item.title
-            avatarImgView.load(URL.init(string: item.title), placeholder: "placeholder_photo", errorPlaceholder: "placeholder_photo")
+            nameLabel.text   = item.first_name
+            avatarImgView.load(URL.init(string: item.profile_pic))
         }
     }
     
