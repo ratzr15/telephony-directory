@@ -25,7 +25,6 @@ extension UIImageView {
        
         // load image now
         self.kf.setImage(with: url, placeholder: p, options: options, progressBlock: nil) { result in
-            // `result` is either a `.success(RetrieveImageResult)` or a `.failure(KingfisherError)`
             switch result {
             case .success(_):
                 break
@@ -42,4 +41,5 @@ public let defaultOptions: KingfisherOptionsInfo = [
     .cacheOriginalImage
 ]
 
-public let defaultPlaceholder = "placeholder"
+public let defaultPlaceholder = "placeholder_photo"
+
