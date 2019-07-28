@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
 //  File Name        :   ListViewController
 //  Description      :   Lists data in table from API
-//                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
+//                       1. Architecture    - MVVM + Rx 
 //  Author            :  Rathish Kannan
 //  E-mail            :  rathishnk@hotmail.co.in
 //  Dated             :  22nd July 2019
@@ -52,7 +52,14 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
     // MARK: Actions
 
     func onResourceSelection(resource: Contact) {
+        var controller: UIViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            return storyboard.instantiateViewController(withIdentifier: String(describing: DetailViewController.self)) as! DetailViewController
+        }
         
+        let  viewController = controller as! DetailViewController
+        viewController.viewModel.resourceEntities = [resource]
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     // MARK: Private Methods

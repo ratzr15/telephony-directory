@@ -15,6 +15,8 @@
 		AE37F7002199A709001787F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE37F6FE2199A709001787F6 /* LaunchScreen.storyboard */; };
 		AE37F70B2199A709001787F6 /* NewsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F70A2199A709001787F6 /* NewsListTests.swift */; };
 		AE37F7162199A709001787F6 /* NewsListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F7152199A709001787F6 /* NewsListUITests.swift */; };
+		AE5EC89422EE1E6E0001D6B7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EC89322EE1E6E0001D6B7 /* DetailViewController.swift */; };
+		AE5EC89622EE1EA10001D6B7 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EC89522EE1EA00001D6B7 /* DetailViewModel.swift */; };
 		AE5FBC1122ED96C800ECC727 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FBC1022ED96C800ECC727 /* UIImageView+Kingfisher.swift */; };
 		AE5FBC1522EDACA700ECC727 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FBC1322EDACA700ECC727 /* ListTableViewCell.swift */; };
 		AE5FBC1622EDACA700ECC727 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE5FBC1422EDACA700ECC727 /* ListTableViewCell.xib */; };
@@ -78,6 +80,8 @@
 		AE37F7112199A709001787F6 /* Telephony-DirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telephony-DirectoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE37F7152199A709001787F6 /* NewsListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUITests.swift; sourceTree = "<group>"; };
 		AE37F7172199A709001787F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE5EC89322EE1E6E0001D6B7 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AE5EC89522EE1EA00001D6B7 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		AE5FBC1022ED96C800ECC727 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		AE5FBC1322EDACA700ECC727 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		AE5FBC1422EDACA700ECC727 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 		AE5EC89222EE1B210001D6B7 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				AE5EC89322EE1E6E0001D6B7 /* DetailViewController.swift */,
+				AE5EC89522EE1EA00001D6B7 /* DetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -593,8 +599,10 @@
 				AE6E303A22E5C72600EC5DE8 /* ContactApiClient.swift in Sources */,
 				AE84135E22E49D1F006396B2 /* ListResourcesViewController.swift in Sources */,
 				AE7FDD3322E6E26A00FA5182 /* String+NilIfEmpty.swift in Sources */,
+				AE5EC89422EE1E6E0001D6B7 /* DetailViewController.swift in Sources */,
 				AE5FBC1822EDB71700ECC727 /* Contact.swift in Sources */,
 				AE6E303822E5AE7A00EC5DE8 /* ContactApi.swift in Sources */,
+				AE5EC89622EE1EA10001D6B7 /* DetailViewModel.swift in Sources */,
 				AE84135822E4985E006396B2 /* Outcome.swift in Sources */,
 				AE5FBC1122ED96C800ECC727 /* UIImageView+Kingfisher.swift in Sources */,
 				AE37F6F62199A708001787F6 /* AppDelegate.swift in Sources */,

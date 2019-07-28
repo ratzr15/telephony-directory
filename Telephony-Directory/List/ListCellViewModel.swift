@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
 //  File Name        :   ListCellViewModel
 //  Description      :   Base resource
-//                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
+//                       1. Architecture    - MVVM + Rx (Ref: "")
 //  Author            :  Rathish Kannan
 //  E-mail            :  rathishnk@hotmail.co.in
 //  Dated             :  22nd July 2019
@@ -17,4 +17,18 @@ struct ListCellViewModel : ResourceCellViewModel {
     let last_name: String
     let isFavorite: Bool
     var profile_pic: String
+    
+    var email: String? = nil
+    var phone: String? = nil
+    
+    init(id: Int, first_name: String, last_name: String, isFavorite:Bool,profile_pic:String,email: String? = nil, phone: String? = nil ) {
+        self.id = id
+        self.first_name = first_name
+        self.last_name = last_name
+        self.isFavorite = isFavorite
+        self.profile_pic = profile_pic
+        self.email = email
+        self.phone = phone
+    }
+    
 }
