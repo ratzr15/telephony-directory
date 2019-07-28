@@ -36,10 +36,12 @@ extension ListResourcesViewController {
     }
     
     fileprivate func bindTableViewData() {
-        viewModel.resources
-            .asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: ResourceTableViewCell.identifier, cellType: ResourceTableViewCell.self)) { (index, model, cell) in
-                cell.model = model
+        viewModel.resources.asObservable()
+            .bind(to:tableView.rx.items) { (tableView, row, element) in
+                let indexPath = IndexPath(row: row, section: 0)
+                let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
+                cell.item = element
+                return cell
             }
             .disposed(by: bag)
     }

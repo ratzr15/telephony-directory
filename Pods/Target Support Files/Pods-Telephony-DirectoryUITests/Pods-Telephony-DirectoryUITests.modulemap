@@ -1,0 +1,6 @@
+framework module Pods_Telephony_DirectoryUITests {
+  umbrella header "Pods-Telephony-DirectoryUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

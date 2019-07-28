@@ -21,7 +21,7 @@ public class ReviewApiClient : ReviewApi {
             case let .success(response):
                 do {
                     let categories = try response.filterSuccessfulStatusCodes().map(Review.self)
-                    callback?(.success(result: categories.data ?? []))
+                    callback?(.success(result: categories.data))
                 } catch (let error) {
                     callback?(.failure(error: error, reason: error.localizedDescription))
                 }
