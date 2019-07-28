@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
 //  File Name        :   ListResourcesViewModel
 //  Description      :   ViewModel for Data logic
-//                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
+//                       1. Architecture    - MVVM + Rx (Ref: "")
 //  Author            :  Rathish Kannan
 //  E-mail            :  rathishnk@hotmail.co.in
 //  Dated             :  22nd July 2019
@@ -25,10 +25,30 @@ protocol ListResourcesViewModel : AnyObject {
     func requestToApi(callback: ((Outcome<[Entity]>) -> ())?)
     func parseEntityToViewModel(_ entity: Entity) -> EntityCellViewModel
     func requestResources()
+    
+    func requestDetailToApi(id:String,
+                            callback: ((Outcome<[Entity]>) -> ())?)
+    func requestResource(id:String)
 }
 
 extension ListResourcesViewModel {
     
+    func requestResource(id:String) {
+        requestDetailToApi(id:id){ outcome in
+            switch outcome {
+            case .success(let result):
+                self.resourceEntities = result
+                let viewModels = result.map({ return self.parseEntityToViewModel($0)})
+                self.resources.accept(viewModels)
+                self.state.accept(.displayingData)
+            case .failure(let error, let reason):
+                print(error)
+                self.resourceEntities = []
+                self.resources.accept([])
+                self.state.accept(.error(errorMessage: reason))
+            }
+        }
+    }
     func requestResources() {
         requestToApi { outcome in
             switch outcome {
