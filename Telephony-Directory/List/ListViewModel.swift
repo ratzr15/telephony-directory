@@ -12,21 +12,21 @@
 import Foundation
 import RxRelay
 
-final class ListViewModel : ListResourcesViewModel {
- 
-    typealias Entity = Datum
+final class ListViewModel : ListResourcesViewModel, CanModifyResources {
+    var stateMode = ResourceState.add
+    typealias Entity = Contact
     typealias EntityViewModel = ListCellViewModel
     
-    var resourceEntities = [Datum]()
+    var resourceEntities = [Contact]()
     let resources = BehaviorRelay<[ListCellViewModel]>(value: [])
-    let selectedResource = BehaviorRelay<Datum?>(value: nil)
+    let selectedResource = BehaviorRelay<Contact?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
     
-    func parseEntityToViewModel(_ entity: Datum) -> ListCellViewModel {
-        return ListCellViewModel(reviewID: entity.reviewID , title: entity.title ?? "")
+    func parseEntityToViewModel(_ entity: Contact) -> ListCellViewModel {
+        return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", last_name: entity.last_name ?? "", isFavorite: entity.favorite ?? false, profile_pic: entity.profile_pic ?? "")
     }
     
-    func requestToApi(callback: ((Outcome<[Datum]>) -> ())?) {
-        return ReviewApiClient.shared.getReviews(callback: callback)
+    func requestToApi(callback: ((Outcome<[Contact]>) -> ())?) {
+        return ContactApiClient.shared.getContacts(callback: callback)
     }
 }

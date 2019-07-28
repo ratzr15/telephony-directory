@@ -47,7 +47,7 @@ extension ListResourcesViewModel {
     }
     
     func onResourceSelected(resource: EntityCellViewModel) {
-        if let entity = resourceEntities.first(where: {$0.reviewID == resource.reviewID}) {
+        if let entity = resourceEntities.first(where: {$0.id == resource.id}) {
             selectedResource.accept(entity)
         }
     }

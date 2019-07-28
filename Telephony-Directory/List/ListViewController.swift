@@ -12,8 +12,7 @@
 import UIKit
 import RxSwift
 
-final class ListViewController: UIViewController, ListResourcesViewController {
-
+final class ListViewController: UIViewController, ListResourcesViewController, CanModifyTableView {
     typealias ViewModel = ListViewModel
     
     // MARK: Fields
@@ -36,18 +35,23 @@ final class ListViewController: UIViewController, ListResourcesViewController {
         return ErrorView()
     }()
     
+    lazy var sortButton: UIBarButtonItem = {
+        return UIBarButtonItem.init(barButtonSystemItem: .add, target: nil, action: nil)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Reviews"
+        title = "Contact"
         setupBindings()
         setupViewHierarchy()
         setupConstraints()
         viewModel.requestResources()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     // MARK: Actions
 
-    func onResourceSelection(resource: Datum) {
+    func onResourceSelection(resource: Contact) {
         
     }
     
@@ -57,7 +61,8 @@ final class ListViewController: UIViewController, ListResourcesViewController {
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
-        tableView.register(ResourceTableViewCell.self, forCellReuseIdentifier: ResourceTableViewCell.identifier)
+        
+        tableView.register(UINib(nibName: ListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
     }
 
     private func setupConstraints() {

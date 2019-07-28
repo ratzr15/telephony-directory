@@ -81,6 +81,13 @@
             ReferencedContainer = "container:Telephony-Directory.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "_UIConstraintBasedLayoutLogUnsatisfiable"
+            value = "false"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

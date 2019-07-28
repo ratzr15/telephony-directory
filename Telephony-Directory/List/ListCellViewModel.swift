@@ -12,6 +12,9 @@
 import Foundation
 
 struct ListCellViewModel : ResourceCellViewModel {
-    let reviewID: Int
-    let title: String
+    var id: Int
+    var first_name: String
+    let last_name: String
+    let isFavorite: Bool
+    var profile_pic: String
 }

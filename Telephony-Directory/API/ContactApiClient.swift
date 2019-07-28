@@ -1,0 +1,35 @@
+//
+//  QuickseriesApiClient.swift
+//  Quickseries-API
+//
+//  Created by Thiago Magalhaes on 2019-05-17.
+//  Copyright © 2019 Thiago Magalhaes. All rights reserved.
+//
+
+import Foundation
+import Moya
+
+public class ContactApiClient : ContactApi {
+    
+    public static let shared = ContactApiClient()
+    
+    private let provider = MoyaProvider<Contacts>()
+    
+    public func getContacts(callback: ((Outcome<[Contact]>) -> ())?) {
+        provider.request(.getContacts) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let categories = try response.filterSuccessfulStatusCodes().map([Contact].self)
+                    callback?(.success(result: categories))
+                } catch (let error) {
+                    callback?(.failure(error: error, reason: error.localizedDescription))
+                }
+            case let .failure(error):
+                callback?(.failure(error: error, reason: error.localizedDescription))
+            }
+        }
+    }
+    
+
+}

@@ -12,6 +12,6 @@
 import Foundation
 
 protocol ResourceCellViewModel {
-    var reviewID: Int { get }
-    var title: String { get }
+    var id: Int { get }
+    var first_name: String { get }
 }
