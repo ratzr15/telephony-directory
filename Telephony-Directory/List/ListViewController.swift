@@ -57,7 +57,8 @@ final class ListViewController: UIViewController, ListResourcesViewController {
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
-        tableView.register(ResourceTableViewCell.self, forCellReuseIdentifier: ResourceTableViewCell.identifier)
+        
+        tableView.register(UINib(nibName: ListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
     }
 
     private func setupConstraints() {
