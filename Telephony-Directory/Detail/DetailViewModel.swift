@@ -36,3 +36,8 @@ final class DetailViewModel : ListResourcesViewModel, CanModifyResources {
     
 }
 
+protocol ContactInformationViewDelegate : AnyObject {
+    func onEmailClicked()
+    func onCallPhoneNumberClicked()
+    func onSmsPhoneNumberClicked()
+}
