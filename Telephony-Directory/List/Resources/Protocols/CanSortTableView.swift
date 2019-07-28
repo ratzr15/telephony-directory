@@ -24,7 +24,7 @@ extension CanSortTableView where Self : ListResourcesViewController, Self.ViewMo
         sortButton.rx.tap
             .asDriver()
             .drive(onNext: { [weak self] in
-                self?.viewModel.onSortClicked()
+                self?.viewModel.onStateClicked()
             })
             .disposed(by: bag)
         navigationItem.rightBarButtonItem = sortButton

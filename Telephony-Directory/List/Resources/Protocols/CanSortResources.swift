@@ -13,36 +13,24 @@ import Foundation
 
 protocol CanSortResources {
     
-    var sortState: ResourceSortState { get set}
+    var stateMode: ResourceState { get set}
 }
 
 extension CanSortResources where Self : ListResourcesViewModel {
     
-    func sortResources(_ r: [Self.Entity]) -> [Self.Entity] {
-        switch sortState {
-        case .alphabetically:
-            return r.sorted { $0.title ?? "" < $1.title ?? ""}
-        case .reverseAlphabetically:
-            return r.sorted { $0.title ?? "" > $1.title ?? "" }
-        case .unsorted:
-            return r
-        }
+    func resources(_ r: [Self.Entity]) -> [Self.Entity] {
+      
+        return []
     }
     
-    mutating func onSortClicked() {
-        switch sortState {
-        case .alphabetically:
-            sortState = .reverseAlphabetically
-        default:
-            sortState = .alphabetically
-        }
-        resourceEntities = sortResources(resourceEntities)
+    mutating func onStateClicked() {
+        resourceEntities = resources(resourceEntities)
         resources.accept(resourceEntities.map({ parseEntityToViewModel($0) }))
     }
 }
 
-enum ResourceSortState {
-    case alphabetically
-    case reverseAlphabetically
-    case unsorted
+enum ResourceState {
+    case add
+    case edit
+    case remove
 }
