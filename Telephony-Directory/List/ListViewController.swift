@@ -35,7 +35,7 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
         return ErrorView()
     }()
     
-    lazy var sortButton: UIBarButtonItem = {
+    lazy var modifyButton: UIBarButtonItem = {
         return UIBarButtonItem.init(barButtonSystemItem: .add, target: nil, action: nil)
     }()
     
@@ -68,7 +68,6 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
-        
         tableView.register(UINib(nibName: ListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
     }
 
