@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class DetailTableViewCell: UITableViewCell {
 
@@ -21,6 +22,10 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var callBtn: UIButton!
     @IBOutlet weak var messageBtn: UIButton!
     
+    private let bag = DisposeBag()
+    
+    var delegate: ContactInformationViewDelegate?
+
     var item: ResourceCellViewModel? {
         didSet {
             guard let item = item as? ListCellViewModel else {
@@ -51,6 +56,31 @@ class DetailTableViewCell: UITableViewCell {
         avatarImgView.image = nil
         nameLabel.text = nil
     }
-
     
+    @IBAction func message(_ sender: Any) {
+        self.delegate?.onEmailClicked()
+    }
+    
+    @IBAction func call(_ sender: Any) {
+        self.delegate?.onCallPhoneNumberClicked()
+
+    }
+    
+    @IBAction func email(_ sender: Any) {
+        self.delegate?.onEmailClicked()
+    }
+    
+    @IBAction func favorite(_ sender: Any) {
+        self.delegate?.onFavoriteClicked()
+
+    }
 }
+
+protocol ContactInformationViewDelegate : AnyObject {
+    func onEmailClicked()
+    func onCallPhoneNumberClicked()
+    func onSmsPhoneNumberClicked()
+    func onFavoriteClicked()
+
+}
+

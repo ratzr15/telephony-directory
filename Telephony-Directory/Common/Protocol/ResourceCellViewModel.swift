@@ -16,8 +16,3 @@ protocol ResourceCellViewModel {
     var first_name: String { get }
 }
 
-protocol ContactInformationViewDelegate : AnyObject {
-    func onEmailClicked()
-    func onCallPhoneNumberClicked()
-    func onSmsPhoneNumberClicked()
-}
