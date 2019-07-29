@@ -56,6 +56,9 @@
                                                 <state key="normal" title="Message" image="message_button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="message:" destination="CZ9-KF-YCx" eventType="touchUpInside" id="mX3-8W-5EF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9v-hv-4v3">
                                                 <rect key="frame" x="107.5" y="0.0" width="34" height="34"/>
@@ -68,6 +71,9 @@
                                                 <state key="normal" image="call_button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="call:" destination="CZ9-KF-YCx" eventType="touchUpInside" id="gno-nq-H8q"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sC-Do-EOB">
                                                 <rect key="frame" x="214.5" y="0.0" width="34" height="34"/>
@@ -80,6 +86,9 @@
                                                 <state key="normal" image="email_button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="email:" destination="CZ9-KF-YCx" eventType="touchUpInside" id="zkc-Ow-TPZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAA-c7-dfT">
                                                 <rect key="frame" x="322" y="0.0" width="34" height="34"/>
@@ -93,6 +102,9 @@
                                                 <state key="normal" image="favourite_button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="favorite:" destination="CZ9-KF-YCx" eventType="touchUpInside" id="C4K-9a-py3"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

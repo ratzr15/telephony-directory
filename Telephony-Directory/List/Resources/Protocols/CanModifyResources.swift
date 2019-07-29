@@ -20,7 +20,7 @@ extension CanModifyResources where Self : ListResourcesViewModel {
     
     func resources(_ r: [Self.Entity]) -> [Self.Entity] {
       
-        return []
+        return r
     }
     
     mutating func onStateClicked() {
