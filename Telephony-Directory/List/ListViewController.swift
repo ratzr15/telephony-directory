@@ -36,7 +36,7 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
     }()
     
     lazy var modifyButton: UIBarButtonItem = {
-        return UIBarButtonItem.init(barButtonSystemItem: .add, target: nil, action: nil)
+        return UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addContact(sender:)))
     }()
     
     override func viewDidLoad() {
@@ -92,4 +92,10 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
         }
     }
 
+}
+
+extension ListViewController {
+     @objc func addContact(sender: UIBarButtonItem){
+        print("Add contact")
+    }
 }
