@@ -15,12 +15,13 @@ import RxCocoa
 import MessageUI
 import SafariServices
 
-final class DetailViewController: UIViewController, ListResourcesViewController, CanModifyTableView {
+final class DetailViewController: UIViewController, CanModifyTableView {
     typealias ViewModel = DetailViewModel
     
     // MARK: Fields
     
     var viewModel = ViewModel()
+    
     let bag = DisposeBag()
     
     var identifier : String = ""
@@ -49,11 +50,30 @@ final class DetailViewController: UIViewController, ListResourcesViewController,
         setupBindings()
         setupViewHierarchy()
         setupConstraints()
-        setupDetailBindings()
         viewModel.requestResource(id: String(viewModel.resourceEntities[0].id ?? 0))
         navigationItem.largeTitleDisplayMode = .never
     }
     
+    func setupBindings() {
+        viewModel.selectedEmail
+            .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
+            .subscribe(onNext: { [weak self] email in self?.composeEmail(email: email) })
+            .disposed(by: bag)
+        
+        viewModel.selectedCallPhoneNumber
+            .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
+            .subscribe(onNext: { [weak self] number in self?.callNumber(number: number) })
+            .disposed(by: bag)
+        
+        viewModel.selectedSmsPhoneNumber
+            .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
+            .subscribe(onNext: { [weak self] number in self?.smsNumber(number: number) })
+            .disposed(by: bag)
+
+        bindTableViewData()
+        subscribeToViewModelState()
+    }
+
     // MARK: Actions
 
     func onResourceSelection(resource: Contact) {
@@ -89,26 +109,46 @@ final class DetailViewController: UIViewController, ListResourcesViewController,
             make.bottom.equalToSuperview().inset(self.view.safeAreaInsets)
         }
     }
-    
-    private func setupDetailBindings() {
-        
-        viewModel.selectedEmail
-            .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: { [weak self] email in self?.composeEmail(email: email) })
-            .disposed(by: bag)
-        
-        viewModel.selectedCallPhoneNumber
-            .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: { [weak self] number in self?.callNumber(number: number) })
-            .disposed(by: bag)
-        
-        viewModel.selectedSmsPhoneNumber
-            .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: { [weak self] number in self?.smsNumber(number: number) })
-            .disposed(by: bag)
-    }
 }
 
+
+extension DetailViewController {
+    fileprivate func bindTableViewData() {
+        viewModel.resources.asObservable()
+            .bind(to:tableView.rx.items) { (tableView, row, element) in
+                let indexPath = IndexPath(row: row, section: 0)
+                let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
+                cell.item = element
+                cell.delegate = self.viewModel
+                return cell
+            }
+            .disposed(by: bag)
+    }
+        
+    fileprivate func subscribeToViewModelState() {
+        viewModel.state.subscribe(onNext: { [weak self] state in
+            UIView.animate(withDuration: 0.5, animations: {
+                switch state {
+                case .loading:
+                    self?.loadingView.isHidden = false
+                    self?.errorView.isHidden = true
+                    self?.tableView.isHidden = true
+                case .error(let message):
+                    self?.loadingView.isHidden = true
+                    self?.errorView.isHidden = false
+                    self?.errorView.messageLabel.text = message
+                    self?.tableView.isHidden = true
+                case .displayingData:
+                    self?.loadingView.isHidden = true
+                    self?.errorView.isHidden = true
+                    self?.tableView.isHidden = false
+                }
+            })
+        }).disposed(by: bag)
+    }
+    
+
+}
 
 extension DetailViewController {
     fileprivate func composeEmail(email: String) {
