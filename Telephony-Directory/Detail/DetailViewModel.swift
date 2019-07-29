@@ -31,6 +31,7 @@ final class DetailViewModel : ListResourcesViewModel, CanModifyResources {
     let selectedEmail = BehaviorRelay<String?>(value: nil)
     let selectedCallPhoneNumber = BehaviorRelay<String?>(value: nil)
     let selectedSmsPhoneNumber = BehaviorRelay<String?>(value: nil)
+    let selectedFavorite = BehaviorRelay<String?>(value: nil)
 
     func parseEntityToViewModel(_ entity: Contact) -> ListCellViewModel {
         return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", last_name: entity.last_name ?? "", isFavorite: entity.favorite ?? false, profile_pic: entity.profile_pic ?? "", email: entity.email ?? "", phone: entity.phone_number ?? "", type: .detail)
@@ -66,6 +67,10 @@ extension DetailViewModel : ContactInformationViewDelegate {
         }
     }
     
+    func onFavoriteClicked() {
+        selectedFavorite.accept(String(model.id ?? 0))
+    }
+
 }
 
 
