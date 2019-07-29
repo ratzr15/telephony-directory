@@ -20,7 +20,7 @@
 ## Thirdparty Libs
 
 - **[Moya](https://github.com/Moya/Moya)**  - Networking library with Alamofire
-- **[RxSwift](https://github.com/ReactiveX/RxSwift)**   - Show ratings for each review  
+- **[RxSwift](https://github.com/ReactiveX/RxSwift)**   - Reactive Swift  
 - **[SnapKit](https://github.com/SnapKit/SnapKit)**   - Autolayout DSL
 - **[Kingfisher](https://github.com/onevcat/Kingfisher)**   - Image caching library
 
