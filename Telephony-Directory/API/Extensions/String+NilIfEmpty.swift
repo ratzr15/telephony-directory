@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     var nilIfEmpty: String? {
@@ -14,3 +15,12 @@ extension String {
     }
 }
 
+extension UILabel {
+    func halfColorChangeForText(fullText: String, changeColortext:String, color:UIColor) {
+        let strNumber : NSString = fullText as NSString
+        let range = (strNumber).range(of: changeColortext)
+        let attribute = NSMutableAttributedString.init(string: fullText)
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: color , range: range)
+        self.attributedText = attribute
+    }
+}
