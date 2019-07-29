@@ -21,7 +21,9 @@ struct ListCellViewModel : ResourceCellViewModel {
     var email: String? = nil
     var phone: String? = nil
     
-    init(id: Int, first_name: String, last_name: String, isFavorite:Bool,profile_pic:String,email: String? = nil, phone: String? = nil ) {
+    var type: ViewType = .list
+
+    init(id: Int, first_name: String, last_name: String, isFavorite:Bool,profile_pic:String,email: String? = nil, phone: String? = nil, type: ViewType = .list) {
         self.id = id
         self.first_name = first_name
         self.last_name = last_name
@@ -29,6 +31,7 @@ struct ListCellViewModel : ResourceCellViewModel {
         self.profile_pic = profile_pic
         self.email = email
         self.phone = phone
+        self.type = type
     }
     
 }

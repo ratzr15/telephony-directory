@@ -21,9 +21,19 @@ final class DetailViewModel : ListResourcesViewModel, CanModifyResources {
     let resources = BehaviorRelay<[ListCellViewModel]>(value: [])
     let selectedResource = BehaviorRelay<Contact?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
+
+    let viewState = ResourceState.add
     
+    var model: Contact {
+        return resourceEntities[0]
+    }
+    
+    let selectedEmail = BehaviorRelay<String?>(value: nil)
+    let selectedCallPhoneNumber = BehaviorRelay<String?>(value: nil)
+    let selectedSmsPhoneNumber = BehaviorRelay<String?>(value: nil)
+
     func parseEntityToViewModel(_ entity: Contact) -> ListCellViewModel {
-        return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", last_name: entity.last_name ?? "", isFavorite: entity.favorite ?? false, profile_pic: entity.profile_pic ?? "", email: entity.email ?? "", phone: entity.phone_number ?? "")
+        return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", last_name: entity.last_name ?? "", isFavorite: entity.favorite ?? false, profile_pic: entity.profile_pic ?? "", email: entity.email ?? "", phone: entity.phone_number ?? "", type: .detail)
     }
     
     func requestToApi(callback: ((Outcome<[Contact]>) -> ())?) {
@@ -36,8 +46,27 @@ final class DetailViewModel : ListResourcesViewModel, CanModifyResources {
     
 }
 
-protocol ContactInformationViewDelegate : AnyObject {
-    func onEmailClicked()
-    func onCallPhoneNumberClicked()
-    func onSmsPhoneNumberClicked()
+
+extension DetailViewModel : ContactInformationViewDelegate {
+    func onEmailClicked() {
+        if let email = model.email {
+            selectedEmail.accept(email)
+        }
+    }
+    
+    func onCallPhoneNumberClicked() {
+        if let number = model.phone_number {
+            selectedCallPhoneNumber.accept(number)
+        }
+    }
+    
+    func onSmsPhoneNumberClicked() {
+        if let number = model.phone_number {
+            selectedSmsPhoneNumber.accept(number)
+        }
+    }
+    
 }
+
+
+
