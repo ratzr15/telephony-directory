@@ -118,6 +118,6 @@ extension ListResourcesViewController where Self : CanModifyTableView, Self.View
         bindTableViewSelection()
         subscribeToModelSelection()
         subscribeToViewModelState()
-        setupSortButton()
+        setupNavigationButton()
     }
 }

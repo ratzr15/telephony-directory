@@ -29,6 +29,8 @@ protocol ListResourcesViewModel : AnyObject {
     func requestDetailToApi(id:String,
                             callback: ((Outcome<[Entity]>) -> ())?)
     func requestResource(id:String)
+    
+    
 }
 
 extension ListResourcesViewModel {
