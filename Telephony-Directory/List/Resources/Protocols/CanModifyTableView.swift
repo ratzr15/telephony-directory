@@ -11,22 +11,14 @@
 
 import Foundation
 import UIKit
-import RxCocoa
 
 protocol CanModifyTableView {
- 
     var modifyButton: UIBarButtonItem { get }
 }
 
 extension CanModifyTableView where Self : ListResourcesViewController, Self.ViewModel : CanModifyResources {
     
-    func setupSortButton() {
-        modifyButton.rx.tap
-            .asDriver()
-            .drive(onNext: { [weak self] in
-                self?.viewModel.onStateClicked()
-            })
-            .disposed(by: bag)
+    func setupNavigationButton() {
         navigationItem.rightBarButtonItem = modifyButton
     }
 }

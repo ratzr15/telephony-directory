@@ -14,12 +14,12 @@ import Foundation
 protocol CanModifyResources {
     
     var stateMode: ResourceState { get set}
+    
 }
 
 extension CanModifyResources where Self : ListResourcesViewModel {
     
     func resources(_ r: [Self.Entity]) -> [Self.Entity] {
-      
         return r
     }
     
@@ -27,6 +27,8 @@ extension CanModifyResources where Self : ListResourcesViewModel {
         resourceEntities = resources(resourceEntities)
         resources.accept(resourceEntities.map({ parseEntityToViewModel($0) }))
     }
+    
+    
 }
 
 enum ResourceState {
