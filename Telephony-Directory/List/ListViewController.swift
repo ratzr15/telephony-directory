@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
 //  File Name        :   ListViewController
 //  Description      :   Lists data in table from API
-//                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
+//                       1. Architecture    - MVVM + Rx 
 //  Author            :  Rathish Kannan
 //  E-mail            :  rathishnk@hotmail.co.in
 //  Dated             :  22nd July 2019
@@ -35,8 +35,8 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
         return ErrorView()
     }()
     
-    lazy var sortButton: UIBarButtonItem = {
-        return UIBarButtonItem.init(barButtonSystemItem: .add, target: nil, action: nil)
+    lazy var modifyButton: UIBarButtonItem = {
+        return UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addContact(sender:)))
     }()
     
     override func viewDidLoad() {
@@ -52,7 +52,14 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
     // MARK: Actions
 
     func onResourceSelection(resource: Contact) {
+        var controller: UIViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            return storyboard.instantiateViewController(withIdentifier: String(describing: DetailViewController.self)) as! DetailViewController
+        }
         
+        let  viewController = controller as! DetailViewController
+        viewController.viewModel.resourceEntities = [resource]
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     // MARK: Private Methods
@@ -61,7 +68,6 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
-        
         tableView.register(UINib(nibName: ListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
     }
 
@@ -86,4 +92,10 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
         }
     }
 
+}
+
+extension ListViewController {
+     @objc func addContact(sender: UIBarButtonItem){
+        print("Add contact")
+    }
 }

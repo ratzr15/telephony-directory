@@ -11,6 +11,7 @@ import Moya
 
 enum Contacts {
     case getContacts
+    case getDetail(id : String)
 }
 
 extension Contacts : TargetType {
@@ -22,6 +23,7 @@ extension Contacts : TargetType {
     var path: String {
         switch self {
         case .getContacts: return "/contacts.json"
+        case .getDetail(let id): return "/contacts/\(id).json"
         }
     }
     

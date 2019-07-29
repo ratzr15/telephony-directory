@@ -31,5 +31,21 @@ public class ContactApiClient : ContactApi {
         }
     }
     
+    public func getDetail(id:String, callback: ((Outcome<[Contact]>) -> ())?) {
+        provider.request(.getDetail(id: id)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let categories = try response.filterSuccessfulStatusCodes().map(Contact.self)
+                    callback?(.success(result: [categories]))
+                } catch (let error) {
+                    callback?(.failure(error: error, reason: error.localizedDescription))
+                }
+            case let .failure(error):
+                callback?(.failure(error: error, reason: error.localizedDescription))
+            }
+        }
+    }
+
 
 }

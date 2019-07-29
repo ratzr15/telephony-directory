@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
 //  File Name        :   ListResourcesViewController
 //  Description      :   Base to manange the datas across view controller
-//                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
+//                       1. Architecture    - MVVM + Rx (Ref: "")
 //  Author            :  Rathish Kannan
 //  E-mail            :  rathishnk@hotmail.co.in
 //  Dated             :  22nd July 2019
@@ -38,14 +38,32 @@ extension ListResourcesViewController {
     fileprivate func bindTableViewData() {
         viewModel.resources.asObservable()
             .bind(to:tableView.rx.items) { (tableView, row, element) in
-                let indexPath = IndexPath(row: row, section: 0)
-                let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
-                cell.item = element
-                return cell
+                guard let item = element as? ListCellViewModel else {
+                    return UITableViewCell()
+                }
+                switch item.type{
+                case .list: return self.list(row: row, element: item) ?? UITableViewCell()
+                case .detail: return self.detail(row: row, element: item) ?? UITableViewCell()
+                default: return self.list(row: row, element: item) ?? UITableViewCell()
+                }
             }
             .disposed(by: bag)
     }
 
+    fileprivate func list(row:Int,element:ListCellViewModel) -> UITableViewCell? {
+        let indexPath = IndexPath(row: row, section: 0)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
+        cell.item = element
+        return cell
+    }
+    
+    fileprivate func detail(row:Int,element:ListCellViewModel) -> UITableViewCell? {
+        let indexPath = IndexPath(row: row, section: 0)
+        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
+        cell.item = element
+        return cell
+    }
+    
     fileprivate func bindTableViewSelection() {
         tableView.rx
             .modelSelected(Self.ViewModel.EntityCellViewModel.self)
@@ -100,6 +118,6 @@ extension ListResourcesViewController where Self : CanModifyTableView, Self.View
         bindTableViewSelection()
         subscribeToModelSelection()
         subscribeToViewModelState()
-        setupSortButton()
+        setupNavigationButton()
     }
 }

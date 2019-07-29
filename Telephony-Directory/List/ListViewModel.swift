@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------------------------
 //  File Name        :   ListCellViewModel
 //  Description      :   VM for business logic and data manipulation
-//                       1. Architecture    - MVVM + Rx (Ref: https://github.com/emisvx/mobile-test/tree/development)
+//                       1. Architecture    - MVVM + Rx (Ref: "")
 //  Author            :  Rathish Kannan
 //  E-mail            :  rathishnk@hotmail.co.in
 //  Dated             :  22nd July 2019
@@ -13,6 +13,7 @@ import Foundation
 import RxRelay
 
 final class ListViewModel : ListResourcesViewModel, CanModifyResources {
+    
     var stateMode = ResourceState.add
     typealias Entity = Contact
     typealias EntityViewModel = ListCellViewModel
@@ -29,4 +30,9 @@ final class ListViewModel : ListResourcesViewModel, CanModifyResources {
     func requestToApi(callback: ((Outcome<[Contact]>) -> ())?) {
         return ContactApiClient.shared.getContacts(callback: callback)
     }
+    
+    func requestDetailToApi(id: String, callback: ((Outcome<[Contact]>) -> ())?) {
+        
+    }
+
 }
