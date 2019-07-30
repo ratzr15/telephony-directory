@@ -30,8 +30,15 @@ class AddTableViewCell: UITableViewCell {
             }
             avatarImgView.load(URL.init(string: item.profile_pic))
             setUpDelegates()
+            vm = item
+
+            if item.type == .edit {
+                fillTexts(item: item)
+            }
         }
     }
+    
+    var vm: ListCellViewModel!
     
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
@@ -57,13 +64,20 @@ class AddTableViewCell: UITableViewCell {
         mobileTextField.delegate = self
     }
     
+    private func fillTexts(item:ListCellViewModel){
+        emailTextField.text = item.email
+        firstNameTextField.text = item.first_name
+        lastNameTextField.text = item.last_name
+        mobileTextField.text = item.phone
+    }
+    
     @IBAction func changeImage(_ sender: Any) {
         
     }
     
     
     @IBAction func done(_ sender: Any) {
-        self.delegate?.onDone(ListCellViewModel.init(id: 1, first_name: firstNameTextField.text ?? "", last_name: lastNameTextField.text ?? "", isFavorite: false, profile_pic: "", email:emailTextField.text ?? "", phone: mobileTextField.text ?? ""), action: .add)
+        self.delegate?.onDone(ListCellViewModel.init(id: vm.id, first_name: firstNameTextField.text ?? "", last_name: lastNameTextField.text ?? "", isFavorite: false, profile_pic: "", email:emailTextField.text ?? "", phone: mobileTextField.text ?? ""), action: .add)
     }
     
 }
