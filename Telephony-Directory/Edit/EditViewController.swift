@@ -14,7 +14,7 @@ import RxSwift
 import RxCocoa
 
 final class EditViewController: UIViewController, ListResourcesViewController, CanModifyTableView {
-    typealias ViewModel = AddViewModel
+    typealias ViewModel = EditViewModel
     
     // MARK: Fields
     
@@ -24,8 +24,6 @@ final class EditViewController: UIViewController, ListResourcesViewController, C
         }
     }
     
-    var cellViewModel = ListCellViewModel.init(id: 0, first_name: "", last_name: "", isFavorite: false, profile_pic: "")
-
     let bag = DisposeBag()
     
     lazy var modifyButton: UIBarButtonItem = {
@@ -56,7 +54,6 @@ final class EditViewController: UIViewController, ListResourcesViewController, C
         subscribeToViewModelState()
         setupViewHierarchy()
         setupConstraints()
-        viewModel.requestAddModel()
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -67,7 +64,7 @@ final class EditViewController: UIViewController, ListResourcesViewController, C
                 switch event {
                 case .next(let value):
                     if value.count >  0 {
-                        self.addContact(model: value[0])
+                        self.editContact(model: value[0])
                     }
                 case .error(let error):
                     print(error)
@@ -144,7 +141,7 @@ extension EditViewController {
                     self?.loadingView.isHidden = true
                     self?.errorView.isHidden = true
                     self?.tableView.isHidden = false
-                    self?.showFeatureNotSupportedAlert(message: "Successfully added contact")
+                    self?.showFeatureNotSupportedAlert(message: "Successfully edited contact!")
                 }
             })
         }).disposed(by: bag)
@@ -153,9 +150,9 @@ extension EditViewController {
 
 
 extension EditViewController {
-    fileprivate func addContact(model: ListCellViewModel) {
+    fileprivate func editContact(model: ListCellViewModel) {
         if !model.first_name.isEmpty || model.first_name != "" || !model.last_name.isEmpty || model.last_name != ""{
-            viewModel.addResource(contact: model)
+            viewModel.editResource(contact: model)
         }else{
             showFeatureNotSupportedAlert(message: "Mandatory fields not filled, not saving data")
         }

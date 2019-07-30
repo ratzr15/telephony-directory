@@ -18,7 +18,7 @@ final class EditViewModel : ListResourcesViewModel, CanModifyResources {
     typealias EntityViewModel = ListCellViewModel
     
     var resourceEntities = [Contact]()
-    let resources = BehaviorRelay<[ListCellViewModel]>(value: [])
+    var resources = BehaviorRelay<[ListCellViewModel]>(value: [])
     let selectedResource = BehaviorRelay<Contact?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
 
@@ -32,7 +32,7 @@ final class EditViewModel : ListResourcesViewModel, CanModifyResources {
     }
     
     func parseEntityToViewModel(_ entity: Contact) -> ListCellViewModel {
-        return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", last_name: entity.last_name ?? "", isFavorite: entity.favorite ?? false, profile_pic: entity.profile_pic ?? "", email: entity.email ?? "", phone: entity.phone_number ?? "", type: .detail)
+        return ListCellViewModel(id: entity.id ?? 0 , first_name: entity.first_name ?? "", last_name: entity.last_name ?? "", isFavorite: entity.favorite ?? false, profile_pic: entity.profile_pic ?? "", email: entity.email ?? "", phone: entity.phone_number ?? "", type: .edit)
     }
     
     func requestToApi(callback: ((Outcome<[Contact]>) -> ())?) {
@@ -43,17 +43,20 @@ final class EditViewModel : ListResourcesViewModel, CanModifyResources {
         return ContactApiClient.shared.getDetail(id: id, callback: callback)
     }
     
-    func requestAddModel() {
-        let viewModels = ListCellViewModel(id: 0 , first_name: "", last_name:  "", isFavorite: false, profile_pic:  "", email:  "", phone: "", type: .add)
+    func passModel(model:ListCellViewModel) {
         self.state.accept(.displayingData)
-        self.resources.accept([viewModels])
+        var passedModel = model
+        passedModel.type = .edit
+        self.resources.accept([passedModel])
+    }
+    
+    func editToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        return ContactApiClient.shared.editContact(contact: contact, callback: callback)
     }
     
     func addToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
-        return ContactApiClient.shared.addContact(contact: contact, callback: callback)
-
+        
     }
-    
 }
 
 
