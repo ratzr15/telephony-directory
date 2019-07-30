@@ -210,6 +210,7 @@ extension DetailViewController {
         }
         
         let  viewController = controller as! EditViewController
+        viewController.viewModel.passModel(model:viewModel.resources.value[0] )
         self.navigationController?.present(viewController, animated: true, completion: nil)
     }
 
