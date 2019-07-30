@@ -15,5 +15,7 @@ public protocol ContactApi {
     func getContacts(callback: ((Outcome<[Contact]>) -> ())?)
     func getDetail(id:String, callback: ((Outcome<[Contact]>) -> ())?)
     func addContact(contact:ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?)
+    func editContact(contact:ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?)
+
 }
 

@@ -62,5 +62,22 @@ public class ContactApiClient : ContactApi {
             }
         }
     }
+    
+    public func editContact(contact:ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        provider.request(.editContact(contact: contact)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let categories = try response.filterSuccessfulStatusCodes().map(Contact.self)
+                    callback?(.success(result: [categories]))
+                } catch (let error) {
+                    callback?(.failure(error: error, reason: error.localizedDescription))
+                }
+            case let .failure(error):
+                callback?(.failure(error: error, reason: error.localizedDescription))
+            }
+        }
+    }
+
 
 }
