@@ -61,12 +61,6 @@ final class EditViewController: UIViewController, ListResourcesViewController, C
     }
     
     fileprivate func setUpAddBindings(){
-        /*viewModel.selectedDone
-            .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
-            .subscribe(onNext: { [weak self] model in self?.addContact(model: model[0])})
-            .disposed(by:bag)*/
-        
-        
         viewModel.selectedDone
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
             .subscribe { event in
@@ -163,7 +157,7 @@ extension EditViewController {
         if !model.first_name.isEmpty || model.first_name != "" || !model.last_name.isEmpty || model.last_name != ""{
             viewModel.addResource(contact: model)
         }else{
-            showFeatureNotSupportedAlert(message: "Mandatory fields not filled")
+            showFeatureNotSupportedAlert(message: "Mandatory fields not filled, not saving data")
         }
     }
     

@@ -206,10 +206,10 @@ extension DetailViewController {
     @objc func editContact(sender: UIBarButtonItem){
         var controller: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            return storyboard.instantiateViewController(withIdentifier: String(describing: AddViewController.self)) as! AddViewController
+            return storyboard.instantiateViewController(withIdentifier: String(describing: EditViewController.self)) as! EditViewController
         }
         
-        let  viewController = controller as! AddViewController
+        let  viewController = controller as! EditViewController
         self.navigationController?.present(viewController, animated: true, completion: nil)
     }
 
