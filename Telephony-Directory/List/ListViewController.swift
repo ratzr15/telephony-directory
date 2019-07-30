@@ -46,6 +46,7 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
         setupViewHierarchy()
         setupConstraints()
         viewModel.requestResources()
+        view.accessibilityIdentifier = "contactListView"
         navigationItem.largeTitleDisplayMode = .never
     }
     

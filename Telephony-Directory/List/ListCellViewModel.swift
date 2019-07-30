@@ -34,4 +34,6 @@ public struct ListCellViewModel : ResourceCellViewModel {
         self.type = type
     }
     
+   
+    
 }
