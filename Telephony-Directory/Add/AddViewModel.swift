@@ -51,8 +51,13 @@ final class AddViewModel : ListResourcesViewModel, CanModifyResources {
     
     func addToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
         return ContactApiClient.shared.addContact(contact: contact, callback: callback)
-
     }
+    
+    func editToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        
+    }
+    
+
     
 }
 
