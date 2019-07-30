@@ -1,10 +1,9 @@
+//  Telephony_DirectoryAPITests
 //
-//  NewsListTests.swift
-//  NewsListTests
-//
-//  Created by Rathish Kannan on 11/12/18.
+//  Created by Rathish Kannan on 30/07/19.
 //  Copyright © 2018 Rathish Kannan. All rights reserved.
 //
+
 
 import XCTest
 @testable import Telephony_Directory
@@ -13,7 +12,7 @@ class Telephony_DirectoryAPITests: XCTestCase {
 
     var api: ContactApi!
 
-    var stubID: String  = "8238"
+    var stubID: String  = "8256"
     
     override func setUp() {
         api = ContactApiClient.shared
@@ -21,6 +20,7 @@ class Telephony_DirectoryAPITests: XCTestCase {
 
     override func tearDown() {
         api = nil
+        
     }
 
     func testIntegrationGetContacts() {
@@ -32,12 +32,14 @@ class Telephony_DirectoryAPITests: XCTestCase {
         }
         waitForExpectations(timeout: 3.0, handler: nil)
         XCTAssertNotNil(response)
-        switch response! {
-        case .success(let results):
-            stubID = String(results[0].id ?? 8238)
+        switch response {
+        case .success(let results)?:
+            stubID = String(results[0].id ?? 8256)
             XCTAssert(results.count > 0)
-        case .failure(let error, _):
+        case .failure(let error, _)?:
             XCTAssert(false, error.localizedDescription)
+        case .none:
+            XCTAssert(false)
         }
     }
     

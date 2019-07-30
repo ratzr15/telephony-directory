@@ -44,6 +44,13 @@
 		AE84135E22E49D1F006396B2 /* ListResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84135D22E49D1F006396B2 /* ListResourcesViewController.swift */; };
 		AE84136222E49D75006396B2 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84136022E49D75006396B2 /* ErrorView.swift */; };
 		AE84136322E49D75006396B2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84136122E49D75006396B2 /* LoadingView.swift */; };
+		AEA8312122F03A70005B15FA /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312022F03A70005B15FA /* ContactTests.swift */; };
+		AEA8312422F05BDA005B15FA /* MockContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312322F05BDA005B15FA /* MockContact.swift */; };
+		AEA8312722F060A6005B15FA /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312622F060A6005B15FA /* ListViewModelTests.swift */; };
+		AEA8312922F065E9005B15FA /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312822F065E9005B15FA /* DetailViewModelTests.swift */; };
+		AEA8312B22F06716005B15FA /* AddEditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312A22F06715005B15FA /* AddEditViewModelTests.swift */; };
+		AEA8312D22F07045005B15FA /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312C22F07045005B15FA /* OnboardingUITests.swift */; };
+		AEA8312F22F0705A005B15FA /* XCUIApplication+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312E22F0705A005B15FA /* XCUIApplication+Onboarding.swift */; };
 		E08C35C987AC6275E8F18456 /* Pods_Telephony_Directory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B7310811FF5ACE74469CAE /* Pods_Telephony_Directory.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +123,13 @@
 		AE84135D22E49D1F006396B2 /* ListResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResourcesViewController.swift; sourceTree = "<group>"; };
 		AE84136022E49D75006396B2 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AE84136122E49D75006396B2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AEA8312022F03A70005B15FA /* ContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
+		AEA8312322F05BDA005B15FA /* MockContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockContact.swift; sourceTree = "<group>"; };
+		AEA8312622F060A6005B15FA /* ListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		AEA8312822F065E9005B15FA /* DetailViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		AEA8312A22F06715005B15FA /* AddEditViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditViewModelTests.swift; sourceTree = "<group>"; };
+		AEA8312C22F07045005B15FA /* OnboardingUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
+		AEA8312E22F0705A005B15FA /* XCUIApplication+Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Onboarding.swift"; sourceTree = "<group>"; };
 		B032160A2B1EC4B4C9E3BEB9 /* Pods-Telephony-DirectoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telephony-DirectoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telephony-DirectoryTests/Pods-Telephony-DirectoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE22AA3B3C03EE72116547F /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		BC61F19BA225319F8C7467CD /* Pods-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -241,7 +255,10 @@
 		AE37F7092199A709001787F6 /* Telephony-DirectoryTests */ = {
 			isa = PBXGroup;
 			children = (
-				AE37F70A2199A709001787F6 /* Telephony_DirectoryAPITests.swift */,
+				AEA8312522F05D3F005B15FA /* ViewModel */,
+				AEA8312222F05BB5005B15FA /* Mock */,
+				AEA8311F22F03A3D005B15FA /* Model */,
+				AEA8311E22F03A2E005B15FA /* Integration */,
 				AE37F70C2199A709001787F6 /* Info.plist */,
 			);
 			path = "Telephony-DirectoryTests";
@@ -250,6 +267,8 @@
 		AE37F7142199A709001787F6 /* Telephony-DirectoryUITests */ = {
 			isa = PBXGroup;
 			children = (
+				AEA8312E22F0705A005B15FA /* XCUIApplication+Onboarding.swift */,
+				AEA8312C22F07045005B15FA /* OnboardingUITests.swift */,
 				AE37F7152199A709001787F6 /* Telephony_DirectoryUIITests.swift */,
 				AE37F7172199A709001787F6 /* Info.plist */,
 			);
@@ -403,6 +422,40 @@
 				AE84136122E49D75006396B2 /* LoadingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AEA8311E22F03A2E005B15FA /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				AE37F70A2199A709001787F6 /* Telephony_DirectoryAPITests.swift */,
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		AEA8311F22F03A3D005B15FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8312022F03A70005B15FA /* ContactTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AEA8312222F05BB5005B15FA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8312322F05BDA005B15FA /* MockContact.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		AEA8312522F05D3F005B15FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8312A22F06715005B15FA /* AddEditViewModelTests.swift */,
+				AEA8312822F065E9005B15FA /* DetailViewModelTests.swift */,
+				AEA8312622F060A6005B15FA /* ListViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -682,6 +735,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA8312B22F06716005B15FA /* AddEditViewModelTests.swift in Sources */,
+				AEA8312122F03A70005B15FA /* ContactTests.swift in Sources */,
+				AEA8312922F065E9005B15FA /* DetailViewModelTests.swift in Sources */,
+				AEA8312422F05BDA005B15FA /* MockContact.swift in Sources */,
+				AEA8312722F060A6005B15FA /* ListViewModelTests.swift in Sources */,
 				AE37F70B2199A709001787F6 /* Telephony_DirectoryAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,6 +748,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA8312F22F0705A005B15FA /* XCUIApplication+Onboarding.swift in Sources */,
+				AEA8312D22F07045005B15FA /* OnboardingUITests.swift in Sources */,
 				AE37F7162199A709001787F6 /* Telephony_DirectoryUIITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
