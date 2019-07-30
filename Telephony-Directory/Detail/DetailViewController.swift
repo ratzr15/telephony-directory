@@ -146,8 +146,6 @@ extension DetailViewController {
             })
         }).disposed(by: bag)
     }
-    
-
 }
 
 extension DetailViewController {
