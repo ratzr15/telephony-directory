@@ -12,7 +12,7 @@ target 'Telephony-Directory' do
     pod 'Moya', '~> 13.0'
     pod 'SnapKit', '~> 5.0.0'
     pod 'Kingfisher'
-
+    pod 'IHKeyboardAvoiding'
 
   target 'Telephony-DirectoryTests' do
     inherit! :search_paths

@@ -29,6 +29,7 @@ class AddTableViewCell: UITableViewCell {
                 return
             }
             avatarImgView.load(URL.init(string: item.profile_pic))
+            setUpDelegates()
         }
     }
     
@@ -49,6 +50,13 @@ class AddTableViewCell: UITableViewCell {
         avatarImgView.image = nil
     }
     
+    private func setUpDelegates(){
+        emailTextField.delegate = self
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        mobileTextField.delegate = self
+    }
+    
     @IBAction func changeImage(_ sender: Any) {
         
     }
@@ -60,6 +68,13 @@ class AddTableViewCell: UITableViewCell {
     
 }
 
+
+extension AddTableViewCell: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
 protocol ContactDelegate : AnyObject {
     func onDone(_ contact: ListCellViewModel, action: ResourceState)

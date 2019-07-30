@@ -12,6 +12,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import IHKeyboardAvoiding
 
 final class AddViewController: UIViewController, ListResourcesViewController, CanModifyTableView {
     typealias ViewModel = AddViewModel
@@ -91,6 +92,7 @@ final class AddViewController: UIViewController, ListResourcesViewController, Ca
     // MARK: Private Methods
     
     private func setupViewHierarchy() {
+        KeyboardAvoiding.avoidingView = self.tableView
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
