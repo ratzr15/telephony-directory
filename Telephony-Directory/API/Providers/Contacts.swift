@@ -13,7 +13,7 @@ enum Contacts {
     case getContacts
     case getDetail(id : String)
     case addContact(contact : ListCellViewModel)
-
+    case editContact(contact : ListCellViewModel)
 }
 
 extension Contacts : TargetType {
@@ -27,6 +27,8 @@ extension Contacts : TargetType {
         case .getContacts: return "/contacts.json"
         case .getDetail(let id): return "/contacts/\(id).json"
         case .addContact( _): return "/contacts.json"
+        case .editContact(let id): return "/contacts/\(id.id).json"
+
         }
     }
     
@@ -36,6 +38,9 @@ extension Contacts : TargetType {
             return .get
         case  .addContact(_):
             return .post
+        case  .editContact(_):
+            return .put
+
         }
     }
     
@@ -49,6 +54,9 @@ extension Contacts : TargetType {
             return .requestPlain
         case let .addContact(contact):
             return .requestParameters(parameters: ["id": contact.id,"first_name": contact.first_name, "last_name": contact.last_name, "email": contact.email ?? "", "phone_number": contact.phone ?? ""], encoding: JSONEncoding.default)
+        case let .editContact(contact):
+            return .requestParameters(parameters: ["first_name": contact.first_name, "last_name": contact.last_name, "email": contact.email ?? "", "phone_number": contact.phone ?? ""], encoding: JSONEncoding.default)
+
         }
     }
     
