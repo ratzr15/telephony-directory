@@ -96,6 +96,12 @@ final class ListViewController: UIViewController, ListResourcesViewController, C
 
 extension ListViewController {
      @objc func addContact(sender: UIBarButtonItem){
-        print("Add contact")
+        var controller: UIViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            return storyboard.instantiateViewController(withIdentifier: String(describing: AddViewController.self)) as! AddViewController
+        }
+        
+        let  viewController = controller as! AddViewController
+        self.navigationController?.present(viewController, animated: true, completion: nil)
     }
 }
