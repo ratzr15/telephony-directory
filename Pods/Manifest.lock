@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - IHKeyboardAvoiding (4.6)
   - Kingfisher (5.6.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -16,6 +17,7 @@ PODS:
   - SnapKit (5.0.0)
 
 DEPENDENCIES:
+  - IHKeyboardAvoiding
   - Kingfisher
   - Moya (~> 13.0)
   - RxCocoa (~> 5)
@@ -26,6 +28,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - IHKeyboardAvoiding
     - Kingfisher
     - Moya
     - Result
@@ -36,6 +39,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
   Kingfisher: 1a50df6880a60bae26f3e21a0df3d17b892f5e0b
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
@@ -44,6 +48,6 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: d86906ccb0b947959156f3cfd4f58dba76edfae6
+PODFILE CHECKSUM: 0845a83655bdf8639f6e3aa878900513a413b97d
 
 COCOAPODS: 1.5.2

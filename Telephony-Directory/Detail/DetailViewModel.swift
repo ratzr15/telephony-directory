@@ -22,12 +22,12 @@ final class DetailViewModel : ListResourcesViewModel, CanModifyResources {
     let selectedResource = BehaviorRelay<Contact?>(value: nil)
     let state = BehaviorRelay<ListViewState>(value: .loading)
 
-    let viewState = ResourceState.add
+    let viewState = ResourceState.view
     
     var model: Contact {
         return resourceEntities[0]
     }
-    
+        
     let selectedEmail = BehaviorRelay<String?>(value: nil)
     let selectedCallPhoneNumber = BehaviorRelay<String?>(value: nil)
     let selectedSmsPhoneNumber = BehaviorRelay<String?>(value: nil)
@@ -43,6 +43,18 @@ final class DetailViewModel : ListResourcesViewModel, CanModifyResources {
 
     func requestDetailToApi(id: String, callback: ((Outcome<[Contact]>) -> ())?) {
         return ContactApiClient.shared.getDetail(id: id, callback: callback)
+    }
+    
+    func addResource(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        return ContactApiClient.shared.addContact(contact:contact, callback: callback)
+    }
+    
+    func addToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        return ContactApiClient.shared.addContact(contact:contact, callback: callback)
+    }
+    
+    func editToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        
     }
     
 }

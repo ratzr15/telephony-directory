@@ -13,7 +13,6 @@ import Foundation
 import RxRelay
 
 final class ListViewModel : ListResourcesViewModel, CanModifyResources {
-    
     var stateMode = ResourceState.add
     typealias Entity = Contact
     typealias EntityViewModel = ListCellViewModel
@@ -35,4 +34,11 @@ final class ListViewModel : ListResourcesViewModel, CanModifyResources {
         
     }
 
+    func addToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        
+    }
+    
+    func editToApi(contact: ListCellViewModel, callback: ((Outcome<[Contact]>) -> ())?) {
+        
+    }
 }

@@ -43,7 +43,7 @@ extension ListResourcesViewController {
                 }
                 switch item.type{
                 case .list: return self.list(row: row, element: item) ?? UITableViewCell()
-                case .detail: return self.detail(row: row, element: item) ?? UITableViewCell()
+                case .add: return self.add(row: row, element: item) ?? UITableViewCell()
                 default: return self.list(row: row, element: item) ?? UITableViewCell()
                 }
             }
@@ -57,9 +57,9 @@ extension ListResourcesViewController {
         return cell
     }
     
-    fileprivate func detail(row:Int,element:ListCellViewModel) -> UITableViewCell? {
+    fileprivate func add(row:Int,element:ListCellViewModel) -> UITableViewCell? {
         let indexPath = IndexPath(row: row, section: 0)
-        let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
         cell.item = element
         return cell
     }
@@ -121,3 +121,4 @@ extension ListResourcesViewController where Self : CanModifyTableView, Self.View
         setupNavigationButton()
     }
 }
+

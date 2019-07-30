@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		2FDD0A79EC894353B67DDC33 /* Pods_Telephony_DirectoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369F8D2E256AC789C4D6A69A /* Pods_Telephony_DirectoryUITests.framework */; };
 		5E29E530C05CDA7501023675 /* Pods_Telephony_DirectoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F43D98E30B1D4E3849789734 /* Pods_Telephony_DirectoryTests.framework */; };
+		AE1CF94822EF6C38001B7105 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1CF94622EF6C38001B7105 /* AddViewController.swift */; };
+		AE1CF94922EF6C38001B7105 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1CF94722EF6C38001B7105 /* AddViewModel.swift */; };
+		AE1CF94D22EF6EB9001B7105 /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1CF94B22EF6EB8001B7105 /* AddTableViewCell.swift */; };
+		AE1CF94E22EF6EB9001B7105 /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE1CF94C22EF6EB8001B7105 /* AddTableViewCell.xib */; };
 		AE37F6F62199A708001787F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F6F52199A708001787F6 /* AppDelegate.swift */; };
 		AE37F6FB2199A708001787F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE37F6F92199A708001787F6 /* Main.storyboard */; };
 		AE37F6FD2199A709001787F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE37F6FC2199A709001787F6 /* Assets.xcassets */; };
 		AE37F7002199A709001787F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE37F6FE2199A709001787F6 /* LaunchScreen.storyboard */; };
-		AE37F70B2199A709001787F6 /* NewsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F70A2199A709001787F6 /* NewsListTests.swift */; };
-		AE37F7162199A709001787F6 /* NewsListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F7152199A709001787F6 /* NewsListUITests.swift */; };
+		AE37F70B2199A709001787F6 /* Telephony_DirectoryAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F70A2199A709001787F6 /* Telephony_DirectoryAPITests.swift */; };
+		AE37F7162199A709001787F6 /* Telephony_DirectoryUIITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F7152199A709001787F6 /* Telephony_DirectoryUIITests.swift */; };
+		AE4AFB7522F0D5CA00F22A7B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AFB7322F0D5CA00F22A7B /* EditViewController.swift */; };
+		AE4AFB7622F0D5CA00F22A7B /* EditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AFB7422F0D5CA00F22A7B /* EditViewModel.swift */; };
 		AE502E9D22EED0CC00497B16 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE502E9C22EED0CC00497B16 /* ViewType.swift */; };
 		AE502EA222EED66E00497B16 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE502EA022EED66E00497B16 /* DetailTableViewCell.swift */; };
 		AE502EA322EED66E00497B16 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE502EA122EED66E00497B16 /* DetailTableViewCell.xib */; };
@@ -40,6 +46,13 @@
 		AE84135E22E49D1F006396B2 /* ListResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84135D22E49D1F006396B2 /* ListResourcesViewController.swift */; };
 		AE84136222E49D75006396B2 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84136022E49D75006396B2 /* ErrorView.swift */; };
 		AE84136322E49D75006396B2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84136122E49D75006396B2 /* LoadingView.swift */; };
+		AEA8312122F03A70005B15FA /* ContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312022F03A70005B15FA /* ContactTests.swift */; };
+		AEA8312422F05BDA005B15FA /* MockContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312322F05BDA005B15FA /* MockContact.swift */; };
+		AEA8312722F060A6005B15FA /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312622F060A6005B15FA /* ListViewModelTests.swift */; };
+		AEA8312922F065E9005B15FA /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312822F065E9005B15FA /* DetailViewModelTests.swift */; };
+		AEA8312B22F06716005B15FA /* AddEditViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312A22F06715005B15FA /* AddEditViewModelTests.swift */; };
+		AEA8312D22F07045005B15FA /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312C22F07045005B15FA /* OnboardingUITests.swift */; };
+		AEA8312F22F0705A005B15FA /* XCUIApplication+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA8312E22F0705A005B15FA /* XCUIApplication+Onboarding.swift */; };
 		E08C35C987AC6275E8F18456 /* Pods_Telephony_Directory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B7310811FF5ACE74469CAE /* Pods_Telephony_Directory.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +84,10 @@
 		7EA62878645CA04C1D6D20B0 /* Pods-Telephony-DirectoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telephony-DirectoryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telephony-DirectoryTests/Pods-Telephony-DirectoryTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D2A8D922892F811EE0A491F /* Pods-Telephony-DirectoryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telephony-DirectoryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telephony-DirectoryUITests/Pods-Telephony-DirectoryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB56644E65AD3F14E4DD2202 /* Pods-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectUITests/Pods-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE1CF94622EF6C38001B7105 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		AE1CF94722EF6C38001B7105 /* AddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
+		AE1CF94B22EF6EB8001B7105 /* AddTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
+		AE1CF94C22EF6EB8001B7105 /* AddTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
 		AE37F6F22199A708001787F6 /* Telephony-Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Telephony-Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE37F6F52199A708001787F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE37F6FA2199A708001787F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,11 +95,13 @@
 		AE37F6FF2199A709001787F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE37F7012199A709001787F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE37F7062199A709001787F6 /* Telephony-DirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telephony-DirectoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE37F70A2199A709001787F6 /* NewsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTests.swift; sourceTree = "<group>"; };
+		AE37F70A2199A709001787F6 /* Telephony_DirectoryAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telephony_DirectoryAPITests.swift; sourceTree = "<group>"; };
 		AE37F70C2199A709001787F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE37F7112199A709001787F6 /* Telephony-DirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telephony-DirectoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE37F7152199A709001787F6 /* NewsListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListUITests.swift; sourceTree = "<group>"; };
+		AE37F7152199A709001787F6 /* Telephony_DirectoryUIITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telephony_DirectoryUIITests.swift; sourceTree = "<group>"; };
 		AE37F7172199A709001787F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE4AFB7322F0D5CA00F22A7B /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		AE4AFB7422F0D5CA00F22A7B /* EditViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewModel.swift; sourceTree = "<group>"; };
 		AE502E9C22EED0CC00497B16 /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		AE502EA022EED66E00497B16 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		AE502EA122EED66E00497B16 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -108,6 +127,13 @@
 		AE84135D22E49D1F006396B2 /* ListResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListResourcesViewController.swift; sourceTree = "<group>"; };
 		AE84136022E49D75006396B2 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AE84136122E49D75006396B2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AEA8312022F03A70005B15FA /* ContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTests.swift; sourceTree = "<group>"; };
+		AEA8312322F05BDA005B15FA /* MockContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockContact.swift; sourceTree = "<group>"; };
+		AEA8312622F060A6005B15FA /* ListViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		AEA8312822F065E9005B15FA /* DetailViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		AEA8312A22F06715005B15FA /* AddEditViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditViewModelTests.swift; sourceTree = "<group>"; };
+		AEA8312C22F07045005B15FA /* OnboardingUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
+		AEA8312E22F0705A005B15FA /* XCUIApplication+Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Onboarding.swift"; sourceTree = "<group>"; };
 		B032160A2B1EC4B4C9E3BEB9 /* Pods-Telephony-DirectoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telephony-DirectoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telephony-DirectoryTests/Pods-Telephony-DirectoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBE22AA3B3C03EE72116547F /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		BC61F19BA225319F8C7467CD /* Pods-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +198,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AE1CF94522EF6C2C001B7105 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				AE1CF94622EF6C38001B7105 /* AddViewController.swift */,
+				AE1CF94722EF6C38001B7105 /* AddViewModel.swift */,
+				AE1CF94A22EF6EB0001B7105 /* View */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		AE1CF94A22EF6EB0001B7105 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE1CF94B22EF6EB8001B7105 /* AddTableViewCell.swift */,
+				AE1CF94C22EF6EB8001B7105 /* AddTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AE37F6E92199A708001787F6 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				AE37F6F52199A708001787F6 /* AppDelegate.swift */,
+				AE4AFB7222F0D5A800F22A7B /* Edit */,
+				AE1CF94522EF6C2C001B7105 /* Add */,
 				AE5EC89222EE1B210001D6B7 /* Detail */,
 				AE6E302722E59D3300EC5DE8 /* List */,
 				AE84135C22E49CDF006396B2 /* Common */,
@@ -213,7 +260,10 @@
 		AE37F7092199A709001787F6 /* Telephony-DirectoryTests */ = {
 			isa = PBXGroup;
 			children = (
-				AE37F70A2199A709001787F6 /* NewsListTests.swift */,
+				AEA8312522F05D3F005B15FA /* ViewModel */,
+				AEA8312222F05BB5005B15FA /* Mock */,
+				AEA8311F22F03A3D005B15FA /* Model */,
+				AEA8311E22F03A2E005B15FA /* Integration */,
 				AE37F70C2199A709001787F6 /* Info.plist */,
 			);
 			path = "Telephony-DirectoryTests";
@@ -222,10 +272,21 @@
 		AE37F7142199A709001787F6 /* Telephony-DirectoryUITests */ = {
 			isa = PBXGroup;
 			children = (
-				AE37F7152199A709001787F6 /* NewsListUITests.swift */,
+				AEA8312E22F0705A005B15FA /* XCUIApplication+Onboarding.swift */,
+				AEA8312C22F07045005B15FA /* OnboardingUITests.swift */,
+				AE37F7152199A709001787F6 /* Telephony_DirectoryUIITests.swift */,
 				AE37F7172199A709001787F6 /* Info.plist */,
 			);
 			path = "Telephony-DirectoryUITests";
+			sourceTree = "<group>";
+		};
+		AE4AFB7222F0D5A800F22A7B /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				AE4AFB7322F0D5CA00F22A7B /* EditViewController.swift */,
+				AE4AFB7422F0D5CA00F22A7B /* EditViewModel.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		AE502E9E22EED12800497B16 /* Type */ = {
@@ -377,6 +438,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AEA8311E22F03A2E005B15FA /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				AE37F70A2199A709001787F6 /* Telephony_DirectoryAPITests.swift */,
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		AEA8311F22F03A3D005B15FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8312022F03A70005B15FA /* ContactTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AEA8312222F05BB5005B15FA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8312322F05BDA005B15FA /* MockContact.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		AEA8312522F05D3F005B15FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AEA8312A22F06715005B15FA /* AddEditViewModelTests.swift */,
+				AEA8312822F065E9005B15FA /* DetailViewModelTests.swift */,
+				AEA8312622F060A6005B15FA /* ListViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -488,6 +583,7 @@
 				AE37F7002199A709001787F6 /* LaunchScreen.storyboard in Resources */,
 				AE37F6FD2199A709001787F6 /* Assets.xcassets in Resources */,
 				AE37F6FB2199A708001787F6 /* Main.storyboard in Resources */,
+				AE1CF94E22EF6EB9001B7105 /* AddTableViewCell.xib in Resources */,
 				AE5FBC1622EDACA700ECC727 /* ListTableViewCell.xib in Resources */,
 				AE502EA322EED66E00497B16 /* DetailTableViewCell.xib in Resources */,
 			);
@@ -520,6 +616,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Telephony-Directory/Pods-Telephony-Directory-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IHKeyboardAvoiding/IHKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -533,6 +630,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IHKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -628,18 +726,23 @@
 				AE5EC89422EE1E6E0001D6B7 /* DetailViewController.swift in Sources */,
 				AE5FBC1822EDB71700ECC727 /* Contact.swift in Sources */,
 				AE502E9D22EED0CC00497B16 /* ViewType.swift in Sources */,
+				AE4AFB7622F0D5CA00F22A7B /* EditViewModel.swift in Sources */,
+				AE1CF94D22EF6EB9001B7105 /* AddTableViewCell.swift in Sources */,
 				AE6E303822E5AE7A00EC5DE8 /* ContactApi.swift in Sources */,
 				AE5EC89622EE1EA10001D6B7 /* DetailViewModel.swift in Sources */,
 				AE84135822E4985E006396B2 /* Outcome.swift in Sources */,
 				AE5FBC1122ED96C800ECC727 /* UIImageView+Kingfisher.swift in Sources */,
 				AE37F6F62199A708001787F6 /* AppDelegate.swift in Sources */,
 				AE84135022E4952D006396B2 /* ListResourcesViewModel.swift in Sources */,
+				AE1CF94822EF6C38001B7105 /* AddViewController.swift in Sources */,
 				AE6E302A22E59D4200EC5DE8 /* CanModifyResources.swift in Sources */,
 				AE84135622E495B2006396B2 /* ResourceCellViewModel.swift in Sources */,
 				AE502EA222EED66E00497B16 /* DetailTableViewCell.swift in Sources */,
+				AE4AFB7522F0D5CA00F22A7B /* EditViewController.swift in Sources */,
 				AE6E303D22E5C7C000EC5DE8 /* Contacts.swift in Sources */,
 				AE84136222E49D75006396B2 /* ErrorView.swift in Sources */,
 				AE6E303122E5A62D00EC5DE8 /* ListViewModel.swift in Sources */,
+				AE1CF94922EF6C38001B7105 /* AddViewModel.swift in Sources */,
 				AE6E302B22E59D4200EC5DE8 /* CanModifyTableView.swift in Sources */,
 				AE6E302F22E5A5F600EC5DE8 /* ListViewController.swift in Sources */,
 				AE84136322E49D75006396B2 /* LoadingView.swift in Sources */,
@@ -650,7 +753,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE37F70B2199A709001787F6 /* NewsListTests.swift in Sources */,
+				AEA8312B22F06716005B15FA /* AddEditViewModelTests.swift in Sources */,
+				AEA8312122F03A70005B15FA /* ContactTests.swift in Sources */,
+				AEA8312922F065E9005B15FA /* DetailViewModelTests.swift in Sources */,
+				AEA8312422F05BDA005B15FA /* MockContact.swift in Sources */,
+				AEA8312722F060A6005B15FA /* ListViewModelTests.swift in Sources */,
+				AE37F70B2199A709001787F6 /* Telephony_DirectoryAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +766,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE37F7162199A709001787F6 /* NewsListUITests.swift in Sources */,
+				AEA8312F22F0705A005B15FA /* XCUIApplication+Onboarding.swift in Sources */,
+				AEA8312D22F07045005B15FA /* OnboardingUITests.swift in Sources */,
+				AE37F7162199A709001787F6 /* Telephony_DirectoryUIITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,9 +1019,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ratzr15.NewsListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NewsList;
+				TEST_TARGET_NAME = "Telephony-Directory";
 			};
 			name = Debug;
 		};
@@ -929,9 +1040,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ratzr15.NewsListUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = NewsList;
+				TEST_TARGET_NAME = "Telephony-Directory";
 			};
 			name = Release;
 		};

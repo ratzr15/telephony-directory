@@ -15,7 +15,7 @@ import RxCocoa
 import MessageUI
 import SafariServices
 
-final class DetailViewController: UIViewController, CanModifyTableView {
+final class DetailViewController: UIViewController, ListResourcesViewController, CanModifyTableView {
     typealias ViewModel = DetailViewModel
     
     // MARK: Fields
@@ -42,7 +42,7 @@ final class DetailViewController: UIViewController, CanModifyTableView {
     }()
     
     lazy var modifyButton: UIBarButtonItem = {
-        return UIBarButtonItem(title: "Edit", style: .plain, target: nil, action: nil)
+        return UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editContact(sender:)))
     }()
     
     override func viewDidLoad() {
@@ -50,6 +50,7 @@ final class DetailViewController: UIViewController, CanModifyTableView {
         setupBindings()
         setupViewHierarchy()
         setupConstraints()
+        setupNavigationButton()
         viewModel.requestResource(id: String(viewModel.resourceEntities[0].id ?? 0))
         navigationItem.largeTitleDisplayMode = .never
     }
@@ -146,8 +147,6 @@ extension DetailViewController {
             })
         }).disposed(by: bag)
     }
-    
-
 }
 
 extension DetailViewController {
@@ -200,4 +199,19 @@ extension DetailViewController : MFMailComposeViewControllerDelegate, MFMessageC
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         controller.dismiss(animated: true)
     }
+}
+
+
+extension DetailViewController {
+    @objc func editContact(sender: UIBarButtonItem){
+        var controller: UIViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            return storyboard.instantiateViewController(withIdentifier: String(describing: EditViewController.self)) as! EditViewController
+        }
+        
+        let  viewController = controller as! EditViewController
+        viewController.viewModel.passModel(model:viewModel.resources.value[0] )
+        self.navigationController?.present(viewController, animated: true, completion: nil)
+    }
+
 }

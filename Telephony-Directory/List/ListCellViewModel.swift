@@ -11,7 +11,7 @@
 
 import Foundation
 
-struct ListCellViewModel : ResourceCellViewModel {
+public struct ListCellViewModel : ResourceCellViewModel {
     var id: Int
     var first_name: String
     let last_name: String
@@ -33,5 +33,7 @@ struct ListCellViewModel : ResourceCellViewModel {
         self.phone = phone
         self.type = type
     }
+    
+   
     
 }

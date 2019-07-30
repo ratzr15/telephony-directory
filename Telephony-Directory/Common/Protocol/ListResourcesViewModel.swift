@@ -22,15 +22,24 @@ protocol ListResourcesViewModel : AnyObject {
     var selectedResource: BehaviorRelay<Entity?> { get }
     var state: BehaviorRelay<ListViewState> { get }
     
+    //list
     func requestToApi(callback: ((Outcome<[Entity]>) -> ())?)
     func parseEntityToViewModel(_ entity: Entity) -> EntityCellViewModel
     func requestResources()
     
+    //detail
     func requestDetailToApi(id:String,
                             callback: ((Outcome<[Entity]>) -> ())?)
     func requestResource(id:String)
     
-    
+    //add
+    func addToApi(contact:ListCellViewModel,
+                            callback: ((Outcome<[Entity]>) -> ())?)
+
+    //edit
+    func editToApi(contact:ListCellViewModel,
+                  callback: ((Outcome<[Entity]>) -> ())?)
+
 }
 
 extension ListResourcesViewModel {
@@ -53,6 +62,40 @@ extension ListResourcesViewModel {
     }
     func requestResources() {
         requestToApi { outcome in
+            switch outcome {
+            case .success(let result):
+                self.resourceEntities = result
+                let viewModels = result.map({ return self.parseEntityToViewModel($0)})
+                self.resources.accept(viewModels)
+                self.state.accept(.displayingData)
+            case .failure(let error, let reason):
+                print(error)
+                self.resourceEntities = []
+                self.resources.accept([])
+                self.state.accept(.error(errorMessage: reason))
+            }
+        }
+    }
+    
+    func addResource(contact:ListCellViewModel) {
+        addToApi(contact: contact){ outcome in
+            switch outcome {
+            case .success(let result):
+                self.resourceEntities = result
+                let viewModels = result.map({ return self.parseEntityToViewModel($0)})
+                self.resources.accept(viewModels)
+                self.state.accept(.displayingData)
+            case .failure(let error, let reason):
+                print(error)
+                self.resourceEntities = []
+                self.resources.accept([])
+                self.state.accept(.error(errorMessage: reason))
+            }
+        }
+    }
+    
+    func editResource(contact:ListCellViewModel) {
+        editToApi(contact: contact){ outcome in
             switch outcome {
             case .success(let result):
                 self.resourceEntities = result

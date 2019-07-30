@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxSwift
 
 class DetailTableViewCell: UITableViewCell {
 
@@ -21,8 +20,6 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var emailBtn: UIButton!
     @IBOutlet weak var callBtn: UIButton!
     @IBOutlet weak var messageBtn: UIButton!
-    
-    private let bag = DisposeBag()
     
     var delegate: ContactInformationViewDelegate?
 
