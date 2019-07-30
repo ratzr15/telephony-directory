@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="412" id="CZ9-KF-YCx" customClass="AddTableViewCell" customModule="Telephony_Directory" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="444" height="475"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="370" id="CZ9-KF-YCx" customClass="AddTableViewCell" customModule="Telephony_Directory" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="444" height="433"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CZ9-KF-YCx" id="ibj-8x-uIc">
-                <rect key="frame" x="0.0" y="0.0" width="444" height="474.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="444" height="432.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-rn-fEe">
@@ -59,6 +59,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ils-XE-1cC" secondAttribute="bottom" constant="59" id="3Gc-3U-csh"/>
+                            <constraint firstAttribute="height" constant="220" id="8hK-jk-ID3"/>
                             <constraint firstItem="ils-XE-1cC" firstAttribute="centerX" secondItem="Zlf-rn-fEe" secondAttribute="centerX" id="PUb-z6-KBf"/>
                             <constraint firstItem="ils-XE-1cC" firstAttribute="top" secondItem="Zlf-rn-fEe" secondAttribute="top" constant="34" id="ZuN-nU-7NP"/>
                             <constraint firstItem="ils-XE-1cC" firstAttribute="trailing" secondItem="paQ-d6-zgX" secondAttribute="trailing" id="xnf-PA-DFE"/>
@@ -66,7 +67,7 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ifX-5f-Rdd">
-                        <rect key="frame" x="44" y="260" width="131" height="203"/>
+                        <rect key="frame" x="44" y="220" width="131" height="203"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duA-ey-HQ8">
                                 <rect key="frame" x="0.0" y="0.0" width="131" height="44"/>
@@ -110,7 +111,7 @@
                         </constraints>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="RcI-Cu-RXe">
-                        <rect key="frame" x="191" y="260" width="209" height="203"/>
+                        <rect key="frame" x="191" y="220" width="209" height="203"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter text/ number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-2m-hWb">
                                 <rect key="frame" x="0.0" y="0.0" width="209" height="44"/>
@@ -157,7 +158,6 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="r4M-gM-Daj" secondAttribute="trailing" constant="28" id="4vT-g7-5cY"/>
-                    <constraint firstItem="ifX-5f-Rdd" firstAttribute="top" secondItem="Zlf-rn-fEe" secondAttribute="bottom" constant="40" id="82S-3u-x1Z"/>
                     <constraint firstItem="ifX-5f-Rdd" firstAttribute="leading" secondItem="ibj-8x-uIc" secondAttribute="leadingMargin" constant="24" id="9bG-Mv-VzI"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ifX-5f-Rdd" secondAttribute="bottom" id="AvW-Z3-ZUx"/>
                     <constraint firstAttribute="bottomMargin" secondItem="RcI-Cu-RXe" secondAttribute="bottom" id="Cuq-lG-uee"/>
@@ -167,7 +167,7 @@
                     <constraint firstItem="r4M-gM-Daj" firstAttribute="top" secondItem="ibj-8x-uIc" secondAttribute="top" constant="4" id="gP7-Sf-974"/>
                     <constraint firstItem="RcI-Cu-RXe" firstAttribute="height" secondItem="ifX-5f-Rdd" secondAttribute="height" id="gRd-pI-OAA"/>
                     <constraint firstItem="RcI-Cu-RXe" firstAttribute="leading" secondItem="ifX-5f-Rdd" secondAttribute="trailing" constant="16" id="jYy-5i-iaR"/>
-                    <constraint firstItem="ifX-5f-Rdd" firstAttribute="top" secondItem="ibj-8x-uIc" secondAttribute="top" constant="260" id="qjj-W8-ldt"/>
+                    <constraint firstItem="ifX-5f-Rdd" firstAttribute="top" secondItem="ibj-8x-uIc" secondAttribute="top" constant="220" id="qjj-W8-ldt"/>
                     <constraint firstAttribute="trailing" secondItem="Zlf-rn-fEe" secondAttribute="trailing" id="uJ3-S8-TTU"/>
                     <constraint firstItem="RcI-Cu-RXe" firstAttribute="leading" secondItem="ibj-8x-uIc" secondAttribute="leading" constant="191" id="ufj-Gf-WdZ"/>
                     <constraint firstItem="RcI-Cu-RXe" firstAttribute="top" secondItem="ifX-5f-Rdd" secondAttribute="top" id="zqI-fH-cTg"/>
@@ -183,7 +183,7 @@
                 <outlet property="lastNameTextField" destination="8Su-ba-b0U" id="Avg-Ca-nq4"/>
                 <outlet property="mobileTextField" destination="Njl-bx-jyw" id="dZ8-oX-9is"/>
             </connections>
-            <point key="canvasLocation" x="-40.579710144927539" y="-354.57589285714283"/>
+            <point key="canvasLocation" x="-40.579710144927539" y="-368.63839285714283"/>
         </tableViewCell>
     </objects>
     <resources>
