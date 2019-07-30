@@ -35,4 +35,6 @@ enum ResourceState {
     case add
     case edit
     case remove
+    case view
+
 }
