@@ -19,6 +19,8 @@
 		AE37F7002199A709001787F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE37F6FE2199A709001787F6 /* LaunchScreen.storyboard */; };
 		AE37F70B2199A709001787F6 /* Telephony_DirectoryAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F70A2199A709001787F6 /* Telephony_DirectoryAPITests.swift */; };
 		AE37F7162199A709001787F6 /* Telephony_DirectoryUIITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE37F7152199A709001787F6 /* Telephony_DirectoryUIITests.swift */; };
+		AE4AFB7522F0D5CA00F22A7B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AFB7322F0D5CA00F22A7B /* EditViewController.swift */; };
+		AE4AFB7622F0D5CA00F22A7B /* EditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AFB7422F0D5CA00F22A7B /* EditViewModel.swift */; };
 		AE502E9D22EED0CC00497B16 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE502E9C22EED0CC00497B16 /* ViewType.swift */; };
 		AE502EA222EED66E00497B16 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE502EA022EED66E00497B16 /* DetailTableViewCell.swift */; };
 		AE502EA322EED66E00497B16 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE502EA122EED66E00497B16 /* DetailTableViewCell.xib */; };
@@ -98,6 +100,8 @@
 		AE37F7112199A709001787F6 /* Telephony-DirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Telephony-DirectoryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE37F7152199A709001787F6 /* Telephony_DirectoryUIITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Telephony_DirectoryUIITests.swift; sourceTree = "<group>"; };
 		AE37F7172199A709001787F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE4AFB7322F0D5CA00F22A7B /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		AE4AFB7422F0D5CA00F22A7B /* EditViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewModel.swift; sourceTree = "<group>"; };
 		AE502E9C22EED0CC00497B16 /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		AE502EA022EED66E00497B16 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		AE502EA122EED66E00497B16 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				AE37F6F52199A708001787F6 /* AppDelegate.swift */,
+				AE4AFB7222F0D5A800F22A7B /* Edit */,
 				AE1CF94522EF6C2C001B7105 /* Add */,
 				AE5EC89222EE1B210001D6B7 /* Detail */,
 				AE6E302722E59D3300EC5DE8 /* List */,
@@ -273,6 +278,15 @@
 				AE37F7172199A709001787F6 /* Info.plist */,
 			);
 			path = "Telephony-DirectoryUITests";
+			sourceTree = "<group>";
+		};
+		AE4AFB7222F0D5A800F22A7B /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				AE4AFB7322F0D5CA00F22A7B /* EditViewController.swift */,
+				AE4AFB7422F0D5CA00F22A7B /* EditViewModel.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		AE502E9E22EED12800497B16 /* Type */ = {
@@ -712,6 +726,7 @@
 				AE5EC89422EE1E6E0001D6B7 /* DetailViewController.swift in Sources */,
 				AE5FBC1822EDB71700ECC727 /* Contact.swift in Sources */,
 				AE502E9D22EED0CC00497B16 /* ViewType.swift in Sources */,
+				AE4AFB7622F0D5CA00F22A7B /* EditViewModel.swift in Sources */,
 				AE1CF94D22EF6EB9001B7105 /* AddTableViewCell.swift in Sources */,
 				AE6E303822E5AE7A00EC5DE8 /* ContactApi.swift in Sources */,
 				AE5EC89622EE1EA10001D6B7 /* DetailViewModel.swift in Sources */,
@@ -723,6 +738,7 @@
 				AE6E302A22E59D4200EC5DE8 /* CanModifyResources.swift in Sources */,
 				AE84135622E495B2006396B2 /* ResourceCellViewModel.swift in Sources */,
 				AE502EA222EED66E00497B16 /* DetailTableViewCell.swift in Sources */,
+				AE4AFB7522F0D5CA00F22A7B /* EditViewController.swift in Sources */,
 				AE6E303D22E5C7C000EC5DE8 /* Contacts.swift in Sources */,
 				AE84136222E49D75006396B2 /* ErrorView.swift in Sources */,
 				AE6E303122E5A62D00EC5DE8 /* ListViewModel.swift in Sources */,
