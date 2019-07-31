@@ -8,6 +8,10 @@
 * __Well maintaineable with MVVM architecture & Rx__
 * __Unit test cases (Coverage 75%)__
 
+![test case status](https://github.com/ratzr15/telephony-directory/blob/master/Extra/Test%20Case%20Status.png)
+
+
+
 
 ## Architecture Details
 
