@@ -11,8 +11,6 @@
 ![test case status](https://github.com/ratzr15/telephony-directory/blob/master/Extra/Test%20Case%20Status.png)
 
 
-
-
 ## Architecture Details
 
 | Module                         | Deisgn Pattern   | Language           |
@@ -48,6 +46,11 @@
 ## Author
 
 - [Rathish Kannan](https://www.linkedin.com/in/rathishkannan/)
+
+
+## Commit History
+
+![Commit messages(as requested)](https://github.com/ratzr15/telephony-directory/blob/master/Extra/GitHistory.pdf)
 
 
 
