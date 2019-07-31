@@ -50,7 +50,7 @@
 
 ## Commit History
 
-![Commit messages(as requested)](https://github.com/ratzr15/telephony-directory/blob/master/Extra/GitHistory.pdf)
+![Commit messages(as requested)](https://github.com/ratzr15/telephony-directory/blob/feature/edit/Extra/GitHistory.png)
 
 
 
