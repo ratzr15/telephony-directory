@@ -17,7 +17,7 @@
 | ------------------------------ | --------------   | ------------------ |
 | List Module                    | MVVM.            | Swift              |
 | Detail Module                  | MVVM.            | Swift              |
-| Add Module                     | MVVM.            | Swift              |
+| Add/Edit Module                | MVVM.            | Swift              |
 
 ## Thirdparty Libs
 
