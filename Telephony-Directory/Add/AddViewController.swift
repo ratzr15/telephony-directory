@@ -157,7 +157,23 @@ extension AddViewController {
 extension AddViewController {
     fileprivate func addContact(model: ListCellViewModel) {
         if !model.first_name.isEmpty || model.first_name != "" || !model.last_name.isEmpty || model.last_name != ""{
-            viewModel.addResource(contact: model)
+            if model.email != "" {
+                if model.email?.validateEmail(enteredEmail: model.email ?? "") ?? true{
+                    if model.phone != ""{
+                        if model.phone?.isPhoneNumber ?? true{
+                            viewModel.addResource(contact: model)
+                        }else{
+                            showFeatureNotSupportedAlert(message: "Incorrect phone! not adding contact! try agian.")
+                        }
+                    }else{
+                        viewModel.addResource(contact: model)
+                    }
+                }else{
+                    showFeatureNotSupportedAlert(message: "Incorrect email! not adding contact! try agian.")
+                }
+            }else{
+                viewModel.addResource(contact: model)
+            }
         }else{
             showFeatureNotSupportedAlert(message: "Mandatory fields not filled, not adding contact!")
         }
