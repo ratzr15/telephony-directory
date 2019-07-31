@@ -50,14 +50,14 @@ final class EditViewController: UIViewController, ListResourcesViewController, C
     override func viewDidLoad() {
         super.viewDidLoad()
         bindTableViewData()
-        setUpAddBindings()
+        setUpEditBindings()
         subscribeToViewModelState()
         setupViewHierarchy()
         setupConstraints()
         navigationItem.largeTitleDisplayMode = .never
     }
     
-    fileprivate func setUpAddBindings(){
+    fileprivate func setUpEditBindings(){
         viewModel.selectedDone
             .flatMap({ return $0 == nil ? Observable.empty() : Observable.just($0!) })
             .subscribe { event in
