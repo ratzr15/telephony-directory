@@ -152,10 +152,27 @@ extension EditViewController {
 extension EditViewController {
     fileprivate func editContact(model: ListCellViewModel) {
         if !model.first_name.isEmpty || model.first_name != "" || !model.last_name.isEmpty || model.last_name != ""{
-            viewModel.editResource(contact: model)
+            if model.email != "" {
+                if model.email?.validateEmail(enteredEmail: model.email ?? "") ?? true{
+                    if model.phone != ""{
+                        if model.phone?.isPhoneNumber ?? true{
+                            viewModel.editResource(contact: model)
+                        }else{
+                            showFeatureNotSupportedAlert(message: "Incorrect phone! not saving contact! try agian.")
+                        }
+                    }else{
+                        viewModel.editResource(contact: model)
+                    }
+                }else{
+                    showFeatureNotSupportedAlert(message: "Incorrect email! not saving contact! try agian.")
+                }
+            }else{
+                viewModel.editResource(contact: model)
+            }
         }else{
-            showFeatureNotSupportedAlert(message: "Mandatory fields not filled, not saving data")
+            showFeatureNotSupportedAlert(message: "Mandatory fields not filled, not editing contact!")
         }
+
     }
     
     fileprivate func showFeatureNotSupportedAlert(message: String = "Your device does not support this feature") {
