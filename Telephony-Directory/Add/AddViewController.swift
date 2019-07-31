@@ -86,13 +86,26 @@ final class AddViewController: UIViewController, ListResourcesViewController, Ca
     // MARK: Private Methods
     
     private func setupViewHierarchy() {
-        KeyboardAvoiding.avoidingView = self.tableView
+        injectKeyBoardAvoidingView()
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
         tableView.register(UINib(nibName: AddTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AddTableViewCell.identifier)
     }
 
+    private func injectKeyBoardAvoidingView(){
+        switch UIDevice().screenType {
+        case .iPhone4, .iPhone5:
+            KeyboardAvoiding.avoidingView = self.tableView
+            break
+        case .iPhone6:
+            KeyboardAvoiding.avoidingView = self.tableView
+            break
+        default:
+            break
+        }
+    }
+    
     private func setupConstraints() {
         errorView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(self.view.safeAreaInsets)
@@ -109,7 +122,7 @@ final class AddViewController: UIViewController, ListResourcesViewController, Ca
         tableView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(self.view.safeAreaInsets)
             make.trailing.equalToSuperview().inset(self.view.safeAreaInsets)
-            make.top.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.top.equalToSuperview().inset(64)
             make.bottom.equalToSuperview().inset(self.view.safeAreaInsets)
         }
     }
@@ -157,7 +170,23 @@ extension AddViewController {
 extension AddViewController {
     fileprivate func addContact(model: ListCellViewModel) {
         if !model.first_name.isEmpty || model.first_name != "" || !model.last_name.isEmpty || model.last_name != ""{
-            viewModel.addResource(contact: model)
+            if model.email != "" {
+                if model.email?.validateEmail(enteredEmail: model.email ?? "") ?? true{
+                    if model.phone != ""{
+                        if model.phone?.isPhoneNumber ?? true{
+                            viewModel.addResource(contact: model)
+                        }else{
+                            showFeatureNotSupportedAlert(message: "Incorrect phone! not adding contact! try agian.")
+                        }
+                    }else{
+                        viewModel.addResource(contact: model)
+                    }
+                }else{
+                    showFeatureNotSupportedAlert(message: "Incorrect email! not adding contact! try agian.")
+                }
+            }else{
+                viewModel.addResource(contact: model)
+            }
         }else{
             showFeatureNotSupportedAlert(message: "Mandatory fields not filled, not adding contact!")
         }
