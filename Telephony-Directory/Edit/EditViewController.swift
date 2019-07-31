@@ -12,6 +12,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import IHKeyboardAvoiding
 
 final class EditViewController: UIViewController, ListResourcesViewController, CanModifyTableView {
     typealias ViewModel = EditViewModel
@@ -82,12 +83,25 @@ final class EditViewController: UIViewController, ListResourcesViewController, C
     // MARK: Private Methods
     
     private func setupViewHierarchy() {
+        injectKeyBoardAvoidingView()
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
         tableView.register(UINib(nibName: AddTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AddTableViewCell.identifier)
     }
 
+    private func injectKeyBoardAvoidingView(){
+        switch UIDevice().screenType {
+        case .iPhone4, .iPhone5:
+            KeyboardAvoiding.avoidingView = self.tableView
+            break
+        case .iPhone6:
+            KeyboardAvoiding.avoidingView = self.tableView
+            break
+        default:
+            break
+        }
+    }
     private func setupConstraints() {
         errorView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(self.view.safeAreaInsets)

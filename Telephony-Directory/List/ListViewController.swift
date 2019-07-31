@@ -103,6 +103,6 @@ extension ListViewController {
         }
         
         let  viewController = controller as! AddViewController
-        self.navigationController?.present(viewController, animated: true, completion: nil)
+        present(viewController, animated: true, completion: nil)
     }
 }

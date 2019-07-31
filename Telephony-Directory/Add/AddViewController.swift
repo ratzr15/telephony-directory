@@ -86,13 +86,26 @@ final class AddViewController: UIViewController, ListResourcesViewController, Ca
     // MARK: Private Methods
     
     private func setupViewHierarchy() {
-        KeyboardAvoiding.avoidingView = self.tableView
+        injectKeyBoardAvoidingView()
         view.addSubview(errorView)
         view.addSubview(loadingView)
         view.addSubview(tableView)
         tableView.register(UINib(nibName: AddTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AddTableViewCell.identifier)
     }
 
+    private func injectKeyBoardAvoidingView(){
+        switch UIDevice().screenType {
+        case .iPhone4, .iPhone5:
+            KeyboardAvoiding.avoidingView = self.tableView
+            break
+        case .iPhone6:
+            KeyboardAvoiding.avoidingView = self.tableView
+            break
+        default:
+            break
+        }
+    }
+    
     private func setupConstraints() {
         errorView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(self.view.safeAreaInsets)
@@ -109,7 +122,7 @@ final class AddViewController: UIViewController, ListResourcesViewController, Ca
         tableView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(self.view.safeAreaInsets)
             make.trailing.equalToSuperview().inset(self.view.safeAreaInsets)
-            make.top.equalToSuperview().inset(self.view.safeAreaInsets)
+            make.top.equalToSuperview().inset(64)
             make.bottom.equalToSuperview().inset(self.view.safeAreaInsets)
         }
     }
