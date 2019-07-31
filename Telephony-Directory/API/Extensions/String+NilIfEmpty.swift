@@ -13,6 +13,27 @@ extension String {
     var nilIfEmpty: String? {
         return self.isEmpty ? nil : self
     }
+    
+    func validateEmail(enteredEmail:String) -> Bool {
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: enteredEmail)
+    }
+    
+    var isPhoneNumber: Bool {
+        do {
+            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.phoneNumber.rawValue)
+            let matches = detector.matches(in: self, options: [], range: NSMakeRange(0, self.count))
+            if let res = matches.first {
+                return res.resultType == .phoneNumber && res.range.location == 0 && res.range.length == self.count
+            } else {
+                return false
+            }
+        } catch {
+            return false
+        }
+    }
+
 }
 
 extension UILabel {
