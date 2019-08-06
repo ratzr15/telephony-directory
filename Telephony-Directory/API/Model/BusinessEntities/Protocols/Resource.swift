@@ -14,5 +14,6 @@ import Foundation
 public protocol Resource {
     var id: Int?   { get }
     var first_name: String?   { get }
+        
 
 }
